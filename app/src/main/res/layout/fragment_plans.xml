@@ -1,0 +1,1173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.subscription_fragments.PlansFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/backBtn">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/subscriptionCard1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp"
+                app:rippleColor="@android:color/transparent"
+                app:strokeColor="@color/colorAccent"
+                app:strokeWidth="1dp"
+                app:cardElevation="8dp"
+                android:outlineSpotShadowColor="@color/colorAccent"
+                android:outlineAmbientShadowColor="@color/colorAccent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/subNameLay1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical"
+                        android:paddingBottom="12dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/bold"
+                            android:paddingBottom="2dp"
+                            android:text="Bronze (Trial Pack)"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/sb1_validity"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/medium"
+                                android:text="\@ 1 Month"
+                                android:textColor="@color/colorTextSecondary"
+                                android:textSize="14sp" />
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="3dp"
+                                app:cardBackgroundColor="@color/colorAccent"
+                                app:cardCornerRadius="10dp"
+                                app:strokeColor="#70E074"
+                                app:strokeWidth="1dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:paddingHorizontal="16dp"
+                                    android:paddingVertical="3dp"
+                                    android:text="Affordable"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="10sp" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/subArrowImg1"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginBottom="24dp"
+                        android:clickable="true"
+                        app:tint="@color/black"
+                        android:src="@drawable/icon_arrow"
+                        app:layout_constraintBottom_toBottomOf="@+id/subNameLay1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/subNameLay1" />
+
+
+                    <LinearLayout
+                        android:id="@+id/subExpandableLay1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/subNameLay1">
+
+                        <TextView
+                            android:id="@+id/subBenefitTxt1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+                            android:text="Benefits:"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <LinearLayout
+                            android:id="@+id/subBenefitsLay1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginEnd="24dp"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf1_txt1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_user"
+                                android:tag="icon_heart_filled"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Send Upto 30 Connection Requests."
+                                android:textSize="14sp"
+                                app:drawableTint="@color/colorAlert" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf1_txt2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_padlock"
+                                android:tag="icon_padlock"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Unlock 10 Total Verified Profile Details."
+                                android:textSize="14sp"
+                                app:drawableTint="#2962FF" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf1_txt3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_user"
+                                android:tag="icon_star_token"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Receive the Basic Badge."
+                                android:textSize="14sp"
+                                app:drawableTint="#FF6D00" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf1_txt4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_search"
+                                android:tag="icon_search"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Access to Advanced Search Filters."
+                                android:textSize="14sp"
+                                app:drawableTint="#00B0FF" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf1_txt5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_phone"
+                                android:tag="icon_phone"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Standard Customer Support (Email/Chat)."
+                                android:textSize="14sp"
+                                app:drawableTint="#014D17" />
+
+
+                        </LinearLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/subPayBtn1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:clickable="true"
+                            android:fontFamily="@font/medium"
+                            android:text="Subscribe for   ₹299"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp"
+                            android:visibility="visible"
+                            app:cornerRadius="25dp" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/subscriptionCard2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp"
+                app:rippleColor="@android:color/transparent"
+                app:strokeColor="@color/colorTextHint"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/subNameLay2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical"
+                        android:paddingBottom="12dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/bold"
+                                android:text="Silver"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/sb2_validity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+                            android:text="\@ 3 Months"
+                            android:textColor="@color/colorTextSecondary"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/subArrowImg2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginBottom="24dp"
+                        android:clickable="true"
+                        android:src="@drawable/icon_arrow"
+                        app:layout_constraintBottom_toBottomOf="@+id/subNameLay2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/subNameLay2"
+                        app:tint="@color/black" />
+
+
+                    <LinearLayout
+                        android:id="@+id/subExpandableLay2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/subNameLay2">
+
+                        <TextView
+                            android:id="@+id/subBenefitTxt2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+                            android:text="Benefits:"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <LinearLayout
+                            android:id="@+id/subBenefitsLay2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginEnd="24dp"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf2_txt1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_user"
+                                android:tag="icon_heart_filled"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Send Upto 100 Connection Requests."
+                                android:textSize="14sp"
+                                app:drawableTint="@color/colorAlert" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf2_txt2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_padlock"
+                                android:tag="icon_padlock"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Unlock 30 Total Verified Profile Details."
+                                android:textSize="14sp"
+                                app:drawableTint="#2962FF" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf2_txt3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_user"
+                                android:tag="icon_star_token"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Receive the Silver Badge."
+                                android:textSize="14sp"
+                                app:drawableTint="#FF6D00" />
+
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf2_txt4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_search"
+                                android:tag="icon_search"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Access to Advanced Search Filters."
+                                android:textSize="14sp"
+                                app:drawableTint="#00B0FF" />
+
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf2_txt5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_phone"
+                                android:tag="icon_phone"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Standard Customer Support (Email/Chat)."
+                                android:textSize="14sp"
+                                app:drawableTint="#014D17" />
+
+
+                        </LinearLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/subPayBtn2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:clickable="true"
+                            android:fontFamily="@font/medium"
+                            android:text="Subscribe for  ₹799"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp"
+                            android:visibility="visible"
+                            app:cornerRadius="25dp" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/subscriptionCard3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp"
+                app:rippleColor="@android:color/transparent"
+                app:strokeColor="@color/colorWarning"
+                app:strokeWidth="1.5dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/subNameLay3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical"
+                        android:paddingBottom="12dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/bold"
+                            android:paddingBottom="2dp"
+                            android:text="Gold"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/sb3_validity"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/medium"
+                                android:text="\@ 6 Months"
+                                android:textColor="@color/colorTextSecondary"
+                                android:textSize="14sp" />
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="3dp"
+                                app:cardBackgroundColor="@color/colorGold"
+                                app:cardCornerRadius="10dp"
+                                app:strokeColor="@color/colorGold"
+                                app:strokeWidth="1dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:paddingHorizontal="16dp"
+                                    android:paddingVertical="3dp"
+                                    android:text="Most Choice"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/subArrowImg3"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginBottom="32dp"
+                        android:clickable="true"
+                        android:src="@drawable/icon_arrow"
+                        app:layout_constraintBottom_toBottomOf="@+id/subNameLay3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/subNameLay3" />
+
+
+                    <LinearLayout
+                        android:id="@+id/subExpandableLay3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/subNameLay3">
+
+                        <TextView
+                            android:id="@+id/subBenefitTxt3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+                            android:text="Benefits:"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <LinearLayout
+                            android:id="@+id/subBenefitsLay3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginEnd="24dp"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf3_txt1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_user"
+                                android:tag="icon_heart_filled"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Send Upto 300 Connection Requests."
+                                android:textSize="14sp"
+                                app:drawableTint="@color/colorAlert" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf3_txt2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_padlock"
+                                android:tag="icon_padlock"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Unlock 70 Total Verified Profile Details."
+                                android:textSize="14sp"
+                                app:drawableTint="#2962FF" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf3_txt3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_user"
+                                android:tag="icon_star_token"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Receive the Gold Badge."
+                                android:textSize="14sp"
+                                app:drawableTint="#FF6D00" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf3_txt4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_user"
+                                android:tag="icon_chat"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Direct Chat enabled with all matches."
+                                android:textSize="14sp"
+                                app:drawableTint="#247C2B" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf3_txt5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_search"
+                                android:tag="icon_search"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Access to Advanced search filters"
+                                android:textSize="14sp"
+                                app:drawableTint="#00B0FF" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf3_txt6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_user"
+                                android:tag="icon_ad_free"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Ad-Free App Experience."
+                                android:textSize="14sp" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf3_txt7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_phone"
+                                android:tag="icon_phone"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Priority Customer Support."
+                                android:textSize="14sp"
+                                app:drawableTint="#014D17" />
+
+
+                        </LinearLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/subPayBtn3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:clickable="true"
+                            android:fontFamily="@font/medium"
+                            android:text="Subscribe for   ₹1,499"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp"
+                            android:visibility="visible"
+                            app:cornerRadius="25dp" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/subscriptionCard4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp"
+                app:rippleColor="@android:color/transparent"
+                app:strokeColor="@color/colorInfo"
+                app:strokeWidth="2dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/subNameLay4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical"
+                        android:paddingBottom="12dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/bold"
+                            android:paddingBottom="2dp"
+                            android:text="Diamond"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/sb4_validity"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/medium"
+                                android:text="\@ 1 Year"
+                                android:textColor="@color/colorTextSecondary"
+                                android:textSize="14sp" />
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="3dp"
+                                app:cardBackgroundColor="@color/colorInfo"
+                                app:cardCornerRadius="10dp"
+                                app:strokeColor="#328FF9"
+                                app:strokeWidth="1dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:paddingHorizontal="16dp"
+                                    android:paddingVertical="3dp"
+                                    android:text="Recommended"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="10sp" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/subArrowImg4"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginBottom="32dp"
+                        android:clickable="true"
+                        android:rotation="90"
+                        android:src="@drawable/icon_arrow"
+                        app:layout_constraintBottom_toBottomOf="@+id/subNameLay4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/subNameLay4" />
+
+
+                    <LinearLayout
+                        android:id="@+id/subExpandableLay4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:orientation="vertical"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/subNameLay4">
+
+                        <TextView
+                            android:id="@+id/subBenefitTxt4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+                            android:text="Benefits:"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <LinearLayout
+                            android:id="@+id/subBenefitsLay4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginEnd="24dp"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf4_txt1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_user"
+                                android:tag="icon_heart_filled"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Send Upto 450+ Connection Requests."
+                                android:textSize="14sp"
+                                app:drawableTint="@color/colorAlert" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf4_txt2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_padlock"
+                                android:tag="icon_padlock"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Unlock 250 Total Verified Profile Details."
+                                android:textSize="14sp"
+                                app:drawableTint="#2962FF" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf4_txt3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_user"
+                                android:tag="icon_star_token"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Receive the Diamond Badge."
+                                android:textSize="14sp"
+                                app:drawableTint="#FF6D00" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf4_txt4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_user"
+                                android:tag="icon_chat"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Direct Chat enabled with all matches."
+                                android:textSize="14sp"
+                                app:drawableTint="#247C2B" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf4_txt5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_search"
+                                android:tag="icon_search"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Access to Advanced search filters"
+                                android:textSize="14sp"
+                                app:drawableTint="#00B0FF" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf4_txt6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_user"
+                                android:tag="icon_user"
+                                android:drawablePadding="8dp"
+                                app:drawableTint="#FF3D00"
+                                android:fontFamily="@font/regular"
+                                android:text="2x Profile Boost"
+                                android:textSize="14sp" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf4_txt7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_user"
+                                android:tag="icon_ad_free"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Ad-Free App Experience."
+                                android:textSize="14sp" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf4_txt8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_phone"
+                                android:tag="icon_phone"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Priority Customer Support."
+                                android:textSize="14sp"
+                                app:drawableTint="#014D17" />
+
+
+                        </LinearLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/subPayBtn4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:clickable="true"
+                            android:fontFamily="@font/medium"
+                            android:text="Subscribe for   ₹2,199"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp"
+                            android:visibility="visible"
+                            app:cornerRadius="25dp" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/subscriptionCard5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp"
+                app:rippleColor="@android:color/transparent"
+                app:strokeColor="@color/purple_700"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/subNameLay5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical"
+                        android:paddingBottom="12dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/bold"
+                            android:paddingBottom="2dp"
+                            android:text="Nikah"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/sb5_validity"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/medium"
+                                android:text="\@ 3 Years  |  Untill Nikah"
+                                android:textColor="@color/colorTextSecondary"
+                                android:textSize="14sp" />
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="2dp"
+                                app:cardBackgroundColor="@color/purple_700"
+                                app:cardCornerRadius="10dp"
+                                app:strokeColor="@color/purple_500"
+                                app:strokeWidth="1dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:paddingHorizontal="16dp"
+                                    android:paddingVertical="3dp"
+                                    android:text="Premium"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="10sp" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/subArrowImg5"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginBottom="32dp"
+                        android:clickable="true"
+                        android:src="@drawable/icon_arrow"
+                        app:layout_constraintBottom_toBottomOf="@+id/subNameLay5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/subNameLay5" />
+
+
+                    <LinearLayout
+                        android:id="@+id/subExpandableLay5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginBottom="16dp"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/subNameLay5">
+
+                        <TextView
+                            android:id="@+id/subBenefitTxt5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+                            android:text="Benefits:"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <LinearLayout
+                            android:id="@+id/subBenefitsLay5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginEnd="24dp"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf5_txt1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_user"
+                                android:tag="icon_heart_filled"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Send Unlimited Connection Requests."
+                                android:textSize="14sp"
+                                app:drawableTint="@color/colorAlert" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf5_txt2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_padlock"
+                                android:tag="icon_padlock"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Unlimited Verified Profile Details Unlocks."
+                                android:textSize="14sp"
+                                app:drawableTint="#4CAF50" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf5_txt3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_user"
+                                android:tag="icon_star_token"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Receive the Premium Badge."
+                                android:textSize="14sp"
+                                app:drawableTint="#FF6D00" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf5_txt4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_user"
+                                android:tag="icon_chat"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Direct Chat enabled with all matches."
+                                android:textSize="14sp"
+                                app:drawableTint="#247C2B" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf5_txt5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_search"
+                                android:tag="icon_search"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Access to Advanced search filters"
+                                android:textSize="14sp"
+                                app:drawableTint="#00B0FF" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf5_txt6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_user"
+                                android:tag="icon_user"
+                                android:drawablePadding="8dp"
+                                app:drawableTint="#FF3D00"
+                                android:fontFamily="@font/regular"
+                                android:text="4x Profile Boost"
+                                android:textSize="14sp" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf5_txt7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_user"
+                                android:tag="icon_ad_free"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Ad-Free App Experience."
+                                android:textSize="14sp" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/sbf5_txt8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:drawableStart="@drawable/icon_phone"
+                                android:tag="icon_phone"
+                                android:drawablePadding="8dp"
+                                android:fontFamily="@font/regular"
+                                android:text="Exclusive Customer Support"
+                                android:textSize="14sp"
+                                app:drawableTint="#014D17" />
+
+
+                        </LinearLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/subPayBtn5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:clickable="true"
+                            android:fontFamily="@font/medium"
+                            android:text="Subscribe for   ₹4,999"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp"
+                            android:visibility="visible"
+                            app:cornerRadius="25dp" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

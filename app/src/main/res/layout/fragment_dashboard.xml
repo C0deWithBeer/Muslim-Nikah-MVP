@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.main_fragments.DashboardFragment">
+
+    <com.nikahtech.muslimnikah.widgets.MCardView
+        android:id="@+id/MCardView2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:backgroundColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/icon_muslim_nikah"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/medium"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/connectionsOpt"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:padding="6dp"
+                        android:foreground="@drawable/fg_ripple"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:src="@drawable/icon_heart"
+                        app:tint="@color/white" />
+                    <com.nikahtech.muslimnikah.widgets.MBadgeView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:badgeTextColor="@color/white"
+                        app:badgeBgColor="@color/colorAlert"
+                        app:badgeTextSize="6sp"
+                        app:badgePadding="4dp"
+                        android:layout_gravity="bottom|end"
+                        app:badgeValue="1"
+                        android:visibility="gone"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginEnd="4dp" />
+                </FrameLayout>
+
+
+
+                <FrameLayout
+                    android:id="@+id/photoReqOpt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:foreground="@drawable/fg_ripple">
+                    <ImageView
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:padding="6dp"
+                        android:src="@drawable/icon_clipboard"
+                        app:tint="@color/white" />
+                    <com.nikahtech.muslimnikah.widgets.MBadgeView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:badgeTextColor="@color/white"
+                        app:badgeBgColor="@color/colorAlert"
+                        app:badgeTextSize="6sp"
+                        app:badgePadding="4dp"
+                        android:layout_gravity="bottom|end"
+                        app:badgeValue="1"
+                        android:visibility="gone"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginEnd="4dp"
+                        />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/notificationOpt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:foreground="@drawable/fg_ripple">
+                    <ImageView
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:padding="6dp"
+                        android:src="@drawable/icon_notification"
+                        app:tint="@color/white" />
+                    <com.nikahtech.muslimnikah.widgets.MBadgeView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:badgeTextColor="@color/white"
+                        app:badgeBgColor="@color/colorAlert"
+                        app:badgeTextSize="6sp"
+                        app:badgePadding="4dp"
+                        android:layout_gravity="bottom|end"
+                        app:badgeValue="1"
+                        android:visibility="gone"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginEnd="4dp"
+                        />
+                </FrameLayout>
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.nikahtech.muslimnikah.widgets.MCardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mainRc"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MCardView2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

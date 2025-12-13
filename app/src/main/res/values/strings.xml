@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Muslim Nikah</string>
+    <string name="app_name_vertical">Muslim\nNikah</string>
+    <string name="tagline">Find Your Soulmate</string>
+    <string name="login">Login</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

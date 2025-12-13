@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.main_fragments.ChatFragment"
+    android:background="@color/colorBackground">
+
+    <com.nikahtech.muslimnikah.widgets.MImageButton
+        android:id="@+id/MImageButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:iconTint="@color/black"
+        app:innerPadding="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rounded="true"
+        app:srcCompat="@drawable/icon_back"
+        app:strokeColor="@color/colorTextMuted"
+        app:strokeWidth="1dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/medium"
+        android:text="Chats"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/MImageButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/MImageButton" />
+
+    <com.nikahtech.muslimnikah.widgets.MImageButton
+        android:id="@+id/MImageButton2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:iconTint="@color/black"
+        app:innerPadding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rounded="true"
+        app:srcCompat="@drawable/icon_three_dots_horizontal"
+        app:strokeColor="@color/colorTextMuted"
+        app:strokeWidth="1dp" />
+
+    <com.nikahtech.muslimnikah.widgets.MEditText
+        android:id="@+id/MEditText3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:drawableStart="@drawable/icon_search"
+        android:drawablePadding="16dp"
+        app:backgroundColor="#F8F8F8"
+        android:drawableTint="@color/colorTextHint"
+        android:fontFamily="@font/regular"
+        android:hint="Search People"
+        android:padding="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/colorTextPrimary"
+        android:textSize="16sp"
+        app:cornerRadius="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MImageButton"
+        app:strokeColor="@color/colorTextHint"
+        app:strokeHighlightColor="@color/colorWarning"
+        app:strokeWidth="1dp"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/medium"
+        android:text="Active"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MEditText3" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/activeUsersRc"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/medium"
+        android:text="Message"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activeUsersRc" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatsRc"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_chat" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

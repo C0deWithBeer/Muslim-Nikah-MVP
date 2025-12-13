@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/tvContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="@color/colorTextSecondary"
+        android:justificationMode="inter_word"
+        android:fontFamily="@font/regular"
+        android:lineSpacingExtra="4dp"/>
+
+    <TextView
+        android:id="@+id/tvToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="6dp"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:fontFamily="@font/medium"
+        android:textColor="@color/purple_500"
+        android:text="Read More"/>
+</merge>

@@ -1,0 +1,3 @@
+implementation 'com.github.omarzer0:az-edittext:0.1.2'
+https://github.com/omarzer0/AZ-EditText
+

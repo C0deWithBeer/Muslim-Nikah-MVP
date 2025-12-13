@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Declare attributes ONCE -->
+    <attr name="cornerRadius" format="dimension" />
+    <attr name="topLeftRadius" format="dimension" />
+    <attr name="topRightRadius" format="dimension" />
+    <attr name="bottomLeftRadius" format="dimension" />
+    <attr name="bottomRightRadius" format="dimension" />
+    <attr name="strokeWidth" format="dimension" />
+    <attr name="strokeColor" format="color" />
+    <attr name="rippleColor" format="color" />
+    <attr name="backgroundColor" format="color" />
+    <attr name="rounded" format="boolean"/>
+
+    <!-- 🎛️ MButton attributes -->
+    <declare-styleable name="MButton">
+        <attr name="cornerRadius"/>
+        <attr name="topLeftRadius"/>
+        <attr name="topRightRadius"/>
+        <attr name="bottomLeftRadius"/>
+        <attr name="bottomRightRadius"/>
+        <attr name="strokeWidth"/>
+        <attr name="strokeColor"/>
+        <attr name="rippleColor"/>
+        <attr name="backgroundColor"/>
+        <attr name="rounded"/>
+        <attr name="drawableWidth" format="dimension" />
+        <attr name="drawableHeight" format="dimension" />
+    </declare-styleable>
+
+    <!-- 🎛️ MCardView attributes -->
+    <declare-styleable name="MCardView">
+        <attr name="cornerRadius"/>
+        <attr name="topLeftRadius"/>
+        <attr name="topRightRadius"/>
+        <attr name="bottomLeftRadius"/>
+        <attr name="bottomRightRadius"/>
+        <attr name="strokeWidth"/>
+        <attr name="strokeColor"/>
+        <attr name="rippleColor"/>
+        <attr name="backgroundColor"/>
+        <attr name="rounded"/>
+        <attr name="cardElevation" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="MIndicatorView">
+        <attr name="dotSize" format="dimension"/>
+        <attr name="dotSpacing" format="dimension"/>
+        <attr name="activeColor" format="color"/>
+        <attr name="inactiveColor" format="color"/>
+    </declare-styleable>
+
+    <!-- MImageButton specific -->
+    <declare-styleable name="MImageButton">
+        <attr name="cornerRadius" />
+        <attr name="topLeftRadius" />
+        <attr name="topRightRadius" />
+        <attr name="bottomLeftRadius" />
+        <attr name="bottomRightRadius" />
+        <attr name="rounded" />
+
+        <attr name="strokeWidth" />
+        <attr name="strokeColor" />
+        <attr name="rippleColor" />
+
+        <attr name="backgroundColor" />
+        <attr name="innerPadding" format="dimension" />
+        <attr name="srcCompat" format="reference" /> <!-- icon -->
+        <attr name="iconTint" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="MGradientView">
+        <attr name="cornerRadius" />
+        <attr name="topLeftRadius" />
+        <attr name="topRightRadius" />
+        <attr name="bottomLeftRadius" />
+        <attr name="bottomRightRadius" />
+        <attr name="rounded" />
+
+        <attr name="strokeWidth"/>
+        <attr name="strokeColor"/>
+
+        <attr name="gradientStartColor" format="color"/>
+        <attr name="gradientCenterColor" format="color"/>
+        <attr name="gradientEndColor" format="color"/>
+
+        <attr name="gradientAngle" format="integer"/>
+
+        <attr name="gradientType">
+            <enum name="linear" value="0"/>
+            <enum name="radial" value="1"/>
+            <enum name="sweep"  value="2"/>
+        </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="MEditText">
+        <attr name="cornerRadius"/>
+        <attr name="cornerTopLeft" format="dimension"/>
+        <attr name="cornerTopRight" format="dimension"/>
+        <attr name="cornerBottomRight" format="dimension"/>
+        <attr name="cornerBottomLeft" format="dimension"/>
+
+        <attr name="strokeWidth"/>
+        <attr name="strokeColor"/>
+        <attr name="strokeHighlightColor" format="color"/>
+        <!-- ⭐ ADD THIS -->
+        <attr name="backgroundColor" />
+    </declare-styleable>
+
+
+    <declare-styleable name="MCheckBox">
+        <attr name="boxColor" format="color"/>                   <!-- ring color -->
+        <attr name="tickColor" format="color"/>                  <!-- tick color -->
+        <attr name="checkedBackgroundColor" format="color"/>    <!-- fill when checked -->
+        <attr name="strokeWidth"/>
+        <attr name="cornerRadius"/>
+        <attr name="checked" format="boolean"/>
+
+        <!-- Label attributes -->
+        <attr name="labelDisplay" format="boolean"/>
+        <attr name="labelText" format="string"/>
+        <attr name="labelColor" format="color"/>
+        <attr name="labelSize" format="dimension"/>
+        <attr name="labelFontFamily" format="reference"/><!-- show label or not -->
+    </declare-styleable>
+
+    <declare-styleable name="MOtpView">
+        <attr name="otpLength" format="integer" />
+        <attr name="circleRadius" format="dimension" />
+        <attr name="strokeWidth" />
+        <attr name="activeStrokeColor" format="color" />
+        <attr name="inactiveStrokeColor" format="color" />
+        <attr name="textColor" format="color" />
+        <attr name="textSize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="MIconButton">
+        <attr name="iconSrc" format="reference" />
+        <attr name="iconTint" />
+        <attr name="bgColor" format="color" />
+        <attr name="rippleColor" />
+        <attr name="cornerRadius" />
+        <attr name="iconPadding" format="dimension" />
+        <attr name="borderColor" format="color" />
+        <attr name="borderWidth" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="MReadMoreTextView">
+
+        <attr name="rmtv_readMoreText" format="string"/>
+        <attr name="rmtv_readLessText" format="string"/>
+
+        <attr name="rmtv_readMoreColor" format="color"/>
+        <attr name="rmtv_readLessColor" format="color"/>
+
+        <attr name="rmtv_collapsedLines" format="integer"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="MBadgeView">
+
+        <attr name="badgeValue" format="string"/>
+        <attr name="badgeBgColor" format="color"/>
+        <attr name="badgeTextColor" format="color"/>
+        <attr name="badgeRippleColor" format="color"/>
+        <attr name="badgeCornerRadius" format="dimension"/>
+        <attr name="badgeBorderColor" format="color"/>
+        <attr name="badgeBorderWidth" format="dimension"/>
+        <attr name="badgeTextSize" format="dimension"/>
+        <attr name="badgePadding" format="dimension"/>
+
+    </declare-styleable>
+
+
+</resources>

@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.EditProfileActivity">
+
+    <com.nikahtech.muslimnikah.widgets.MImageButton
+        android:id="@+id/MImageButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:iconTint="@color/black"
+        app:innerPadding="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rounded="true"
+        app:srcCompat="@drawable/icon_back"
+        app:strokeColor="@color/colorTextMuted"
+        app:strokeWidth="1dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/medium"
+        android:text="Edit Profile"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/MImageButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/MImageButton" />
+
+    <com.nikahtech.muslimnikah.widgets.MImageButton
+        android:id="@+id/MImageButton2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:iconTint="@color/black"
+        app:innerPadding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rounded="true"
+        app:srcCompat="@drawable/icon_user_filled"
+        app:strokeColor="@color/colorTextMuted"
+        app:strokeWidth="1dp" />
+
+    <!-- TOP TAB BAR -->
+    <com.nikahtech.muslimnikah.widgets.MCardView
+        android:id="@+id/MCardView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:backgroundColor="@color/colorPrimaryDark"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MImageButton">
+
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            app:tabBackground="@color/colorPrimaryDark"
+            app:tabGravity="start"
+            app:tabIndicatorAnimationMode="elastic"
+            app:tabIndicatorColor="@color/colorAlert"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorHeight="4dp"
+            app:tabMode="scrollable"
+            app:tabSelectedTextAppearance="@style/EditProfileTabLayTextSelected"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextAppearance="@style/EditProfileTabLayText"
+            app:tabTextColor="@color/colorTextMuted">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Photos" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Basic Details" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Professional Details" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location Details" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Religious Details" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Family Details" />
+        </com.google.android.material.tabs.TabLayout>
+    </com.nikahtech.muslimnikah.widgets.MCardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MCardView4">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.nikahtech.muslimnikah.widgets.MCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="8dp"
+                app:topLeftRadius="10dp"
+                app:topRightRadius="10dp"
+                app:bottomLeftRadius="10dp"
+                app:bottomRightRadius="10dp"
+                android:layout_marginHorizontal="8dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/semibold"
+                        android:lineSpacingExtra="5dp"
+                        android:text="Photos"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        tools:ignore="HardcodedText" />
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginVertical="12dp"
+                            android:layout_marginStart="16dp">
+
+                            <com.makeramen.roundedimageview.RoundedImageView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                app:riv_corner_radius="12dp"
+                                android:src="@drawable/portait"
+                                android:scaleType="centerCrop"
+                                app:riv_border_color="@color/colorAlert"
+                                app:riv_border_width="2dp"/>
+
+                            <com.makeramen.roundedimageview.RoundedImageView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                app:riv_corner_radius="12dp"
+                                android:src="@drawable/portait"
+                                android:scaleType="centerCrop"
+                                android:layout_marginStart="16dp"
+                                app:riv_border_color="@color/colorTextSecondary"
+                                app:riv_border_width="2dp"/>
+
+                            <com.makeramen.roundedimageview.RoundedImageView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                app:riv_corner_radius="12dp"
+                                android:src="@drawable/portait"
+                                android:scaleType="centerCrop"
+                                android:layout_marginStart="16dp"
+                                app:riv_border_color="@color/colorTextSecondary"
+                                app:riv_border_width="2dp"/>
+
+                            <com.makeramen.roundedimageview.RoundedImageView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                app:riv_corner_radius="12dp"
+                                android:src="@drawable/portait"
+                                android:scaleType="centerCrop"
+                                android:layout_marginStart="16dp"
+                                app:riv_border_color="@color/colorTextSecondary"
+                                app:riv_border_width="2dp"/>
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                </LinearLayout>
+            </com.nikahtech.muslimnikah.widgets.MCardView>
+
+            <com.nikahtech.muslimnikah.widgets.MCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="8dp"
+                app:topLeftRadius="10dp"
+                app:topRightRadius="10dp"
+                app:bottomLeftRadius="10dp"
+                app:bottomRightRadius="10dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="8dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/semibold"
+                        android:lineSpacingExtra="5dp"
+                        android:text="Basic Info"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.nikahtech.muslimnikah.widgets.MEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:drawableTint="@color/colorTextHint"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/icon_email"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/regular"
+                        android:hint="Full Name"
+                        android:padding="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorTextPrimary"
+                        android:textSize="16sp"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/colorTextHint"
+                        app:strokeHighlightColor="@color/colorPrimaryDark"
+                        app:strokeWidth="1dp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.nikahtech.muslimnikah.widgets.MEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:drawableTint="@color/colorTextHint"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/icon_email"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/regular"
+                        android:hint="Gender"
+                        android:padding="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorTextPrimary"
+                        android:textSize="16sp"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/colorTextHint"
+                        app:strokeHighlightColor="@color/colorPrimaryDark"
+                        app:strokeWidth="1dp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.nikahtech.muslimnikah.widgets.MEditText
+                        android:id="@+id/MEditText3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:drawableTint="@color/colorTextHint"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/icon_email"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/regular"
+                        android:hint="Date of Birth"
+                        android:padding="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorTextPrimary"
+                        android:textSize="16sp"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/colorTextHint"
+                        app:strokeHighlightColor="@color/colorPrimaryDark"
+                        app:strokeWidth="1dp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.nikahtech.muslimnikah.widgets.MEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:drawableTint="@color/colorTextHint"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/icon_email"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/regular"
+                        android:hint="Height"
+                        android:padding="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorTextPrimary"
+                        android:textSize="16sp"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/colorTextHint"
+                        app:strokeHighlightColor="@color/colorPrimaryDark"
+                        app:strokeWidth="1dp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.nikahtech.muslimnikah.widgets.MEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="16dp"
+                        android:drawableTint="@color/colorTextHint"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/icon_email"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/regular"
+                        android:hint="Marital Status"
+                        android:padding="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorTextPrimary"
+                        android:textSize="16sp"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/colorTextHint"
+                        app:strokeHighlightColor="@color/colorPrimaryDark"
+                        app:strokeWidth="1dp"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+            </com.nikahtech.muslimnikah.widgets.MCardView>
+
+
+            <com.nikahtech.muslimnikah.widgets.MCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="8dp"
+                app:topLeftRadius="10dp"
+                app:topRightRadius="10dp"
+                app:bottomLeftRadius="10dp"
+                app:bottomRightRadius="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="8dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/semibold"
+                        android:lineSpacingExtra="5dp"
+                        android:text="Contact Info"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.nikahtech.muslimnikah.widgets.MEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:drawableTint="@color/colorTextHint"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/icon_email"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/regular"
+                        android:hint="Phone number"
+                        android:padding="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorTextPrimary"
+                        android:textSize="16sp"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/colorTextHint"
+                        app:strokeHighlightColor="@color/colorPrimaryDark"
+                        app:strokeWidth="1dp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.nikahtech.muslimnikah.widgets.MEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="16dp"
+                        android:drawableTint="@color/colorTextHint"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/icon_email"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/regular"
+                        android:hint="Email Address"
+                        android:padding="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorTextPrimary"
+                        android:textSize="16sp"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/colorTextHint"
+                        app:strokeHighlightColor="@color/colorPrimaryDark"
+                        app:strokeWidth="1dp"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+            </com.nikahtech.muslimnikah.widgets.MCardView>
+
+            <com.nikahtech.muslimnikah.widgets.MCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="8dp"
+                app:topLeftRadius="10dp"
+                app:topRightRadius="10dp"
+                app:bottomLeftRadius="10dp"
+                app:bottomRightRadius="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="8dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/semibold"
+                        android:lineSpacingExtra="5dp"
+                        android:text="Edu &amp; Profession"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.nikahtech.muslimnikah.widgets.MEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:drawableTint="@color/colorTextHint"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/icon_email"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/regular"
+                        android:hint="Highest Education"
+                        android:padding="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorTextPrimary"
+                        android:textSize="16sp"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/colorTextHint"
+                        app:strokeHighlightColor="@color/colorPrimaryDark"
+                        app:strokeWidth="1dp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.nikahtech.muslimnikah.widgets.MEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:drawableTint="@color/colorTextHint"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/icon_email"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/regular"
+                        android:hint="Employed In"
+                        android:padding="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorTextPrimary"
+                        android:textSize="16sp"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/colorTextHint"
+                        app:strokeHighlightColor="@color/colorPrimaryDark"
+                        app:strokeWidth="1dp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.nikahtech.muslimnikah.widgets.MEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:drawableTint="@color/colorTextHint"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/icon_email"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/regular"
+                        android:hint="Occupation"
+                        android:padding="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorTextPrimary"
+                        android:textSize="16sp"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/colorTextHint"
+                        app:strokeHighlightColor="@color/colorPrimaryDark"
+                        app:strokeWidth="1dp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.nikahtech.muslimnikah.widgets.MEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="16dp"
+                        android:drawableTint="@color/colorTextHint"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/icon_email"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/regular"
+                        android:hint="Annual Income"
+                        android:padding="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorTextPrimary"
+                        android:textSize="16sp"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/colorTextHint"
+                        app:strokeHighlightColor="@color/colorPrimaryDark"
+                        app:strokeWidth="1dp"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+            </com.nikahtech.muslimnikah.widgets.MCardView>
+
+
+
+            <com.nikahtech.muslimnikah.widgets.MCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="8dp"
+                app:topLeftRadius="10dp"
+                app:topRightRadius="10dp"
+                app:bottomLeftRadius="10dp"
+                app:bottomRightRadius="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="8dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/semibold"
+                        android:lineSpacingExtra="5dp"
+                        android:text="Location"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.nikahtech.muslimnikah.widgets.MEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:drawableTint="@color/colorTextHint"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/icon_email"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/regular"
+                        android:hint="Country"
+                        android:padding="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorTextPrimary"
+                        android:textSize="16sp"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/colorTextHint"
+                        app:strokeHighlightColor="@color/colorPrimaryDark"
+                        app:strokeWidth="1dp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.nikahtech.muslimnikah.widgets.MEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:drawableTint="@color/colorTextHint"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/icon_email"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/regular"
+                        android:hint="State"
+                        android:padding="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorTextPrimary"
+                        android:textSize="16sp"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/colorTextHint"
+                        app:strokeHighlightColor="@color/colorPrimaryDark"
+                        app:strokeWidth="1dp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.nikahtech.muslimnikah.widgets.MEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:drawableTint="@color/colorTextHint"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/icon_email"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/regular"
+                        android:hint="District / City"
+                        android:padding="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorTextPrimary"
+                        android:textSize="16sp"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/colorTextHint"
+                        app:strokeHighlightColor="@color/colorPrimaryDark"
+                        app:strokeWidth="1dp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.nikahtech.muslimnikah.widgets.MEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="16dp"
+                        android:drawableTint="@color/colorTextHint"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/icon_email"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/regular"
+                        android:hint="Mother Tongue"
+                        android:padding="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorTextPrimary"
+                        android:textSize="16sp"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/colorTextHint"
+                        app:strokeHighlightColor="@color/colorPrimaryDark"
+                        app:strokeWidth="1dp"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+            </com.nikahtech.muslimnikah.widgets.MCardView>
+
+
+
+            <com.nikahtech.muslimnikah.widgets.MCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="8dp"
+                app:topLeftRadius="10dp"
+                app:topRightRadius="10dp"
+                app:bottomLeftRadius="10dp"
+                app:bottomRightRadius="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="8dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/semibold"
+                        android:lineSpacingExtra="5dp"
+                        android:text="Religious Info"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.nikahtech.muslimnikah.widgets.MEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:drawableTint="@color/colorTextHint"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/icon_email"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/regular"
+                        android:hint="Sect"
+                        android:padding="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorTextPrimary"
+                        android:textSize="16sp"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/colorTextHint"
+                        app:strokeHighlightColor="@color/colorPrimaryDark"
+                        app:strokeWidth="1dp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.nikahtech.muslimnikah.widgets.MEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:drawableTint="@color/colorTextHint"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/icon_email"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/regular"
+                        android:hint="Caste"
+                        android:padding="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorTextPrimary"
+                        android:textSize="16sp"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/colorTextHint"
+                        app:strokeHighlightColor="@color/colorPrimaryDark"
+                        app:strokeWidth="1dp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.nikahtech.muslimnikah.widgets.MEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="16dp"
+                        android:drawableTint="@color/colorTextHint"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/icon_email"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/regular"
+                        android:hint="Religious Level"
+                        android:padding="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorTextPrimary"
+                        android:textSize="16sp"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/colorTextHint"
+                        app:strokeHighlightColor="@color/colorPrimaryDark"
+                        app:strokeWidth="1dp"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+            </com.nikahtech.muslimnikah.widgets.MCardView>
+
+
+
+            <com.nikahtech.muslimnikah.widgets.MCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="8dp"
+                app:topLeftRadius="10dp"
+                app:topRightRadius="10dp"
+                app:bottomLeftRadius="10dp"
+                app:bottomRightRadius="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginBottom="80dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/semibold"
+                        android:lineSpacingExtra="5dp"
+                        android:text="About Family"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.nikahtech.muslimnikah.widgets.MEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:drawableTint="@color/colorTextHint"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/icon_email"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/regular"
+                        android:hint="Family Type"
+                        android:padding="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorTextPrimary"
+                        android:textSize="16sp"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/colorTextHint"
+                        app:strokeHighlightColor="@color/colorPrimaryDark"
+                        app:strokeWidth="1dp"
+                        tools:ignore="HardcodedText" />
+
+                    <com.nikahtech.muslimnikah.widgets.MEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="16dp"
+                        android:drawableTint="@color/colorTextHint"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/icon_email"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/regular"
+                        android:hint="Family Status"
+                        android:padding="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/colorTextPrimary"
+                        android:textSize="16sp"
+                        app:cornerRadius="10dp"
+                        app:strokeColor="@color/colorTextHint"
+                        app:strokeHighlightColor="@color/colorPrimaryDark"
+                        app:strokeWidth="1dp"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+            </com.nikahtech.muslimnikah.widgets.MCardView>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.nikahtech.muslimnikah.widgets.MButton
+        android:id="@+id/MButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/medium"
+        android:text="Update Profile"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:backgroundColor="@color/colorPrimary"
+        app:topRightRadius="10dp"
+        app:topLeftRadius="10dp"
+        app:bottomLeftRadius="10dp"
+        app:bottomRightRadius="10dp"
+        android:paddingVertical="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
