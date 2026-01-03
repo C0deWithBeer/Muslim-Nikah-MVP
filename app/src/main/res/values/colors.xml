@@ -9,10 +9,16 @@
     <color name="white">#FFFFFFFF</color>
 
     <!-- 🌿 Brand / Theme -->
-    <color name="colorPrimary">#1B5E20</color> <!-- Deep Faith Green -->
-    <color name="colorPrimaryDark">#104315</color> <!-- Stronger base -->
-    <color name="colorAccent">#4CAF50</color> <!-- Bright, lively emerald -->
-    <color name="colorLoveHighlight">#00BFA5</color> <!-- Teal-green accent -->
+    <!--    <color name="colorPrimary">#1B5E20</color> &lt;!&ndash; Deep Faith Green &ndash;&gt;-->
+    <!--    <color name="colorPrimaryDark">#104315</color> &lt;!&ndash; Stronger base &ndash;&gt;-->
+    <!--    <color name="colorAccent">#4CAF50</color> &lt;!&ndash; Bright, lively emerald &ndash;&gt;-->
+    <!--    <color name="colorLoveHighlight">#00BFA5</color> &lt;!&ndash; Teal-green accent &ndash;&gt;-->
+    <!-- 🌹 Brand / Theme (Rose–Raspberry) -->
+    <color name="colorPrimary">#FF244F</color> <!-- Tinder Rose Red -->
+    <color name="colorPrimaryDark">#d52a45</color> <!-- Deep Passion Red -->
+    <color name="colorAccent">#E91133</color> <!-- Hot Pink -->
+    <color name="colorLove">#FF3366</color> <!-- Heart / Like / Match -->
+    <color name="colorPrimaryBtn">#F21F40</color>
 
     <!-- 💛 Premium & Highlights -->
     <color name="colorGold">#FFD700</color> <!-- Premium membership / highlight -->
@@ -27,6 +33,8 @@
     <color name="colorLightGrey">#E0E0E0</color>
     <color name="colorDivider">#EEEEEE</color>
     <color name="colorTransparent">#00FFFFFF</color>
+
+    <color name="checkBoxColor">#18D918</color>
 
     <!-- 🖋️ Text -->
     <color name="colorTextPrimary">#212121</color>

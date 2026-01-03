@@ -1,12 +1,9 @@
 package com.nikahtech.muslimnikah.viewholders.notification_viewholder;
 
 import android.content.Context;
-import android.view.View;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.nikahtech.muslimnikah.databinding.ItemNotificationBinding;
 import com.nikahtech.muslimnikah.models.Notification;
 

@@ -6,16 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.LoginActivity"
-    android:background="@color/colorSurface">
+    android:background="@color/colorBackground">
 
     <com.nikahtech.muslimnikah.widgets.MGradientView
         android:id="@+id/MGradientView"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         app:gradientAngle="90"
-        app:gradientCenterColor="@color/colorPrimaryDark"
+        app:gradientCenterColor="@color/colorAccent"
         app:gradientEndColor="@color/colorPrimary"
-        app:gradientStartColor="@color/colorPrimaryDark"
+        app:gradientStartColor="@color/colorAccent"
         app:gradientType="linear"
         app:bottomLeftRadius="16dp"
         app:bottomRightRadius="16dp"
@@ -48,7 +48,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/medium"
+                android:fontFamily="@font/satoshi_medium"
                 android:text="@string/app_name"
                 android:textColor="@color/white"
                 android:textSize="18sp"
@@ -57,9 +57,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/light"
+                android:fontFamily="@font/satoshi_light"
                 android:text="@string/tagline"
                 android:textColor="@color/white"
+                android:textStyle="bold"
                 android:textSize="14sp" />
         </LinearLayout>
     </LinearLayout>
@@ -70,9 +71,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/semibold"
-        android:lineSpacingExtra="5dp"
-        android:text="Sign in to your\nAccount"
+        android:fontFamily="@font/satoshi_medium"
+        android:text="Sign in to your Account"
         android:textAlignment="viewStart"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -87,9 +87,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:fontFamily="@font/regular"
+        android:fontFamily="@font/satoshi_regular"
         android:textColor="@color/black"
-        android:text="Enter your email and password to log in"
+        android:text="Enter your phone number to continue"
         android:textAlignment="viewStart"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,185 +101,277 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
 
-
-        <com.nikahtech.muslimnikah.widgets.MEditText
-            android:id="@+id/MEditText3"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
-            android:drawableTint="@color/colorTextHint"
-            android:layout_marginEnd="16dp"
-            android:background="@color/white"
-            android:drawableStart="@drawable/icon_email"
-            android:drawablePadding="16dp"
-            android:fontFamily="@font/regular"
-            android:hint="Email"
-            android:padding="12dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/colorTextPrimary"
-            android:textSize="16sp"
-            app:cornerRadius="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:strokeColor="@color/colorTextHint"
-            app:strokeHighlightColor="@color/colorPrimaryDark"
+            android:layout_marginHorizontal="16dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="3dp"
             app:strokeWidth="1dp"
-            tools:ignore="HardcodedText" />
+            app:strokeColor="@color/colorTextHint">
 
-        <com.nikahtech.muslimnikah.widgets.MEditText
-            android:id="@+id/MEditText4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="16dp"
-            android:background="@color/white"
-            android:drawableTint="@color/colorTextHint"
-            android:drawableStart="@drawable/icon_padlock"
-            android:drawableEnd="@drawable/icon_eye_off"
-            android:drawablePadding="16dp"
-            android:fontFamily="@font/regular"
-            android:hint="Password"
-            android:padding="12dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/colorTextPrimary"
-            android:textSize="16sp"
-            app:cornerRadius="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:strokeColor="@color/colorTextHint"
-            app:strokeHighlightColor="@color/colorPrimaryDark"
-            app:strokeWidth="1dp"
-            tools:ignore="HardcodedText" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingVertical="4dp">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/ccp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    app:ccp_textGravity="CENTER"
+                    app:ccp_defaultLanguage="ENGLISH"
+                    app:ccp_defaultPhoneCode="91"
+                    app:ccp_defaultNameCode="IN"
+                    app:ccp_autoDetectCountry="false"
+                    app:ccp_rememberLastSelection="false"
+                    app:ccp_padding="8dp"
+                    app:ccpDialog_cornerRadius="16dp"
+                    app:ccpDialog_allowSearch="false"
+                    app:ccpDialog_backgroundColor="@color/white"
+                    app:ccp_showFlag="true"
+                    app:ccp_showNameCode="false"
+                    app:ccp_textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/etPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/colorTransparent"
+                    android:digits="0123456789"
+                    android:letterSpacing="0.05"
+                    android:imeOptions="actionDone"
+                    android:fontFamily="@font/satoshi_regular"
+                    android:textStyle="bold"
+                    android:hint="Phone number"
+                    android:includeFontPadding="false"
+                    android:inputType="phone"
+                    android:paddingVertical="6dp"
+                    android:textCursorDrawable="@drawable/cursor"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--        <com.nikahtech.muslimnikah.widgets.MEditText-->
+        <!--            android:id="@+id/MEditText3"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="16dp"-->
+        <!--            android:layout_marginTop="10dp"-->
+        <!--            android:layout_marginEnd="16dp"-->
+        <!--            android:background="@color/white"-->
+        <!--            android:drawableStart="@drawable/icon_phone"-->
+        <!--            android:drawablePadding="16dp"-->
+        <!--            android:drawableTint="@color/colorTextHint"-->
+        <!--            android:fontFamily="@font/satoshi_regular"-->
+        <!--            android:hint="Phone number"-->
+        <!--            android:padding="12dp"-->
+        <!--            android:textColor="@color/black"-->
+        <!--            android:textColorHint="@color/colorTextPrimary"-->
+        <!--            android:textSize="16sp"-->
+        <!--            app:cornerRadius="10dp"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/textView2"-->
+        <!--            app:strokeColor="@color/colorTextHint"-->
+        <!--            app:strokeHighlightColor="@color/colorPrimaryDark"-->
+        <!--            app:strokeWidth="1dp"-->
+        <!--            tools:ignore="HardcodedText" />-->
+
+        <!--        <com.nikahtech.muslimnikah.widgets.MEditText-->
+        <!--            android:id="@+id/MEditText4"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="16dp"-->
+        <!--            android:layout_marginTop="10dp"-->
+        <!--            android:layout_marginEnd="16dp"-->
+        <!--            android:background="@color/white"-->
+        <!--            android:drawableStart="@drawable/icon_padlock"-->
+        <!--            android:drawableEnd="@drawable/icon_eye_off"-->
+        <!--            android:drawablePadding="16dp"-->
+        <!--            android:drawableTint="@color/colorTextHint"-->
+        <!--            android:fontFamily="@font/regular"-->
+        <!--            android:hint="Password"-->
+        <!--            android:padding="12dp"-->
+        <!--            android:textColor="@color/black"-->
+        <!--            android:textColorHint="@color/colorTextPrimary"-->
+        <!--            android:textSize="16sp"-->
+        <!--            app:cornerRadius="10dp"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/textView2"-->
+        <!--            app:strokeColor="@color/colorTextHint"-->
+        <!--            app:strokeHighlightColor="@color/colorPrimaryDark"-->
+        <!--            app:strokeWidth="1dp"-->
+        <!--            tools:ignore="HardcodedText" />-->
 
     </LinearLayout>
 
     <com.google.android.material.checkbox.MaterialCheckBox
-        android:id="@+id/rememberCheck"
-        android:layout_width="wrap_content"
+        android:id="@+id/agreementChkBox"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/regular"
+        android:lineSpacingExtra="8dp"
+        android:paddingStart="10dp"
         android:paddingEnd="8dp"
-        android:text="Remember me"
-        android:textColor="@color/colorTextPrimary"
+        android:text="By signing up, you agree with our Privacy Policy, Terms &amp; Conditions"
+        android:textColor="@color/black"
         android:textSize="15sp"
-        app:buttonTint="@color/remember_check_selector"
+        app:buttonTint="@color/check_selector"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
         tools:ignore="HardcodedText,RtlSymmetry" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/medium"
-        android:paddingHorizontal="6dp"
-        android:paddingVertical="4dp"
-        android:text="Forgot Password ?"
-        android:textAlignment="center"
-        android:textColor="@color/colorInfo"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/rememberCheck"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/rememberCheck"
-        tools:ignore="HardcodedText" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView3"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginEnd="16dp"-->
+    <!--        android:fontFamily="@font/satoshi_medium"-->
+    <!--        android:paddingHorizontal="6dp"-->
+    <!--        android:paddingVertical="4dp"-->
+    <!--        android:text="Forgot Password ?"-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:textColor="@color/colorInfo"-->
+    <!--        android:textSize="16sp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/rememberCheck"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/rememberCheck"-->
+    <!--        tools:ignore="HardcodedText" />-->
 
-    <com.nikahtech.muslimnikah.widgets.MButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/MButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:text="Log In"
-        android:fontFamily="@font/medium"
+        android:backgroundTint="#F21F40"
+        android:fontFamily="@font/satoshi_medium"
+        android:paddingVertical="12dp"
+        android:text="Submit"
+        android:textStyle="bold"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="15sp"
-        android:textAllCaps="false"
-        app:backgroundColor="@color/colorPrimary"
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/agreementChkBox"
         tools:ignore="HardcodedText" />
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MButton">
+<!--    <FrameLayout-->
+<!--        android:id="@+id/frameLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:layout_marginEnd="24dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/MButton">-->
 
-        <com.google.android.material.divider.MaterialDivider
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_gravity="center"
-            android:background="@color/colorTextPrimary" />
+<!--        <com.google.android.material.divider.MaterialDivider-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="1dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:background="@color/colorTextPrimary" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@color/colorSurface"
-            android:paddingHorizontal="8dp"
-            android:paddingVertical="4dp"
-            android:text="Or"
-            android:textColor="@color/colorTextPrimary"
-            android:textSize="15sp"
-            tools:ignore="HardcodedText" />
-    </FrameLayout>
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:background="@color/colorBackground"-->
+<!--            android:paddingHorizontal="8dp"-->
+<!--            android:paddingVertical="4dp"-->
+<!--            android:text="Or"-->
+<!--            android:fontFamily="@font/satoshi_medium"-->
+<!--            android:textColor="@color/colorTextPrimary"-->
+<!--            android:textSize="15sp"-->
+<!--            tools:ignore="HardcodedText" />-->
+<!--    </FrameLayout>-->
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout">
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="24dp"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/frameLayout">-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Don't have an account?"
-            android:textColor="@color/colorTextPrimary"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:fontFamily="@font/regular"
-            tools:ignore="HardcodedText" />
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="Sign in with"-->
+    <!--            android:textColor="@color/colorTextPrimary"-->
+    <!--            android:textSize="15sp"-->
+    <!--            android:textStyle="bold"-->
+    <!--            android:fontFamily="@font/satoshi_regular"-->
+    <!--            tools:ignore="HardcodedText" />-->
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/signUpBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:fontFamily="@font/medium"
-            android:paddingHorizontal="6dp"
-            android:paddingVertical="4dp"
-            android:text="Sign Up"
-            android:layout_marginStart="6dp"
-            android:textAlignment="center"
-            android:textColor="@color/colorInfo"
-            android:textSize="16sp"
-            tools:ignore="HardcodedText" />
-    </LinearLayout>
+    <!--        <com.google.android.material.textview.MaterialTextView-->
+    <!--            android:id="@+id/signUpBtn"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:clickable="true"-->
+    <!--            android:fontFamily="@font/satoshi_medium"-->
+    <!--            android:paddingHorizontal="6dp"-->
+    <!--            android:paddingVertical="4dp"-->
+    <!--            android:text="Google"-->
+    <!--            android:layout_marginStart="6dp"-->
+    <!--            android:textAlignment="center"-->
+    <!--            android:textColor="@color/colorInfo"-->
+    <!--            android:textSize="16sp"-->
+    <!--            tools:ignore="HardcodedText" />-->
+    <!--    </LinearLayout>-->
+
+
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:id="@+id/btnGoogleSignIn"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="52dp"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginEnd="16dp"-->
+<!--        android:backgroundTint="@color/white"-->
+<!--        android:fontFamily="@font/satoshi_medium"-->
+<!--        android:gravity="center"-->
+<!--        android:insetTop="0dp"-->
+<!--        android:insetBottom="0dp"-->
+<!--        android:text="Continue with Google"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="#202124"-->
+<!--        android:textSize="15sp"-->
+<!--        app:cornerRadius="10dp"-->
+<!--        app:icon="@drawable/icon_google"-->
+<!--        app:iconGravity="textStart"-->
+<!--        app:iconPadding="12dp"-->
+<!--        app:iconTint="@null"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/frameLayout"-->
+<!--        app:strokeColor="#DADCE0"-->
+<!--        app:strokeWidth="1dp" />-->
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

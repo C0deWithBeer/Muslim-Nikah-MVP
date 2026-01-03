@@ -7,11 +7,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.nikahtech.muslimnikah.databinding.ItemDashHeaderBinding;
 import com.nikahtech.muslimnikah.databinding.ItemNotificationBinding;
 import com.nikahtech.muslimnikah.models.Notification;
-import com.nikahtech.muslimnikah.models.dashboard_sections.Header;
-import com.nikahtech.muslimnikah.viewholders.dashboard_section_viewholders.HeaderVH;
 import com.nikahtech.muslimnikah.viewholders.notification_viewholder.NotificationVH;
 
 import java.util.List;

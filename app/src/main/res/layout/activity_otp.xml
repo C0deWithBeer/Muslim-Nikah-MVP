@@ -13,9 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         app:gradientAngle="90"
-        app:gradientCenterColor="@color/colorPrimaryDark"
+        app:gradientCenterColor="@color/colorAccent"
         app:gradientEndColor="@color/colorPrimary"
-        app:gradientStartColor="@color/colorPrimaryDark"
+        app:gradientStartColor="@color/colorAccent"
         app:gradientType="linear"
         app:bottomLeftRadius="16dp"
         app:bottomRightRadius="16dp"
@@ -49,7 +49,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/medium"
+                android:fontFamily="@font/satoshi_medium"
                 android:text="@string/app_name"
                 android:textColor="@color/white"
                 android:textSize="18sp"
@@ -61,6 +61,7 @@
                 android:fontFamily="@font/light"
                 android:text="@string/tagline"
                 android:textColor="@color/white"
+                android:textStyle="bold"
                 android:textSize="14sp" />
         </LinearLayout>
     </LinearLayout>
@@ -70,13 +71,13 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/semibold"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/satoshi_medium"
         android:lineSpacingExtra="5dp"
-        android:text="Enter the Code"
+        android:text="OTP"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,14 +85,14 @@
         tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/instTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
-        android:fontFamily="@font/regular"
-        android:lineSpacingExtra="8dp"
+        android:fontFamily="@font/satoshi_regular"
+        android:lineSpacingExtra="4dp"
         android:text="An 6 digit code has been sent to your\nnumber  ( +91 ) 9500951894"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -103,12 +104,13 @@
 
     <com.freedomotpview.OTPView
         android:id="@+id/otpView"
+        android:theme="@style/OtpEditTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/instTxt"
         app:otpBackground="@drawable/bg_otp_item"
         app:otpHeight="55dp"
         app:otpLength="6"
@@ -118,7 +120,7 @@
         app:otpWidth="55dp" />
 
     <com.nikahtech.muslimnikah.widgets.MButton
-        android:id="@+id/MButton2"
+        android:id="@+id/resendBtn"
         android:layout_width="wrap_content"
         android:layout_height="38dp"
         android:layout_marginTop="16dp"
@@ -135,23 +137,24 @@
         app:layout_constraintTop_toBottomOf="@+id/otpView"
         app:rounded="true" />
 
-    <com.nikahtech.muslimnikah.widgets.MButton
-        android:id="@+id/MButton"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/submitBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:fontFamily="@font/medium"
-        android:text="Submit"
+        android:backgroundTint="#F21F40"
+        android:fontFamily="@font/satoshi_medium"
+        android:paddingVertical="12dp"
+        android:text="Verify OTP"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="15sp"
-        app:backgroundColor="@color/colorPrimary"
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MButton2"
+        app:layout_constraintTop_toBottomOf="@+id/resendBtn"
         tools:ignore="HardcodedText" />
 
 

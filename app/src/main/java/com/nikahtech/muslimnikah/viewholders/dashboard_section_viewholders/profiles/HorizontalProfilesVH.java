@@ -1,9 +1,7 @@
 package com.nikahtech.muslimnikah.viewholders.dashboard_section_viewholders.profiles;
 
 import android.content.Intent;
-import android.view.View;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;

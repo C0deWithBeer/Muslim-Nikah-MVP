@@ -19,8 +19,6 @@ import com.nikahtech.muslimnikah.databinding.ActivityConnectionBinding;
 import com.nikahtech.muslimnikah.fragments.connection_fragments.ConnectedFragment;
 import com.nikahtech.muslimnikah.fragments.connection_fragments.ReceivedFragment;
 import com.nikahtech.muslimnikah.fragments.connection_fragments.SentFragment;
-import com.nikahtech.muslimnikah.fragments.subscription_fragments.ActiveFragment;
-import com.nikahtech.muslimnikah.fragments.subscription_fragments.PlansFragment;
 import com.nikahtech.muslimnikah.widgets.MButton;
 
 import java.util.Arrays;

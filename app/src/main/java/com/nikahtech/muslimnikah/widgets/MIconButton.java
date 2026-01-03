@@ -13,7 +13,6 @@ import android.widget.ImageView;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 
 import com.nikahtech.muslimnikah.R;
 

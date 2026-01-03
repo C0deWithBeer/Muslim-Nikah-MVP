@@ -1,9 +1,7 @@
 package com.nikahtech.muslimnikah.viewholders.photoreq_viewholders;
 
 import android.content.Context;
-import android.view.View;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.nikahtech.muslimnikah.databinding.ItemPhotoreqSentBinding;

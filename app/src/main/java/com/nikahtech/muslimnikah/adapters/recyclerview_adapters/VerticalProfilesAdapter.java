@@ -7,10 +7,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.nikahtech.muslimnikah.databinding.ItemHorizontalProfileBinding;
 import com.nikahtech.muslimnikah.databinding.ItemVerticalProfileBinding;
 import com.nikahtech.muslimnikah.models.Profile;
-import com.nikahtech.muslimnikah.viewholders.dashboard_section_viewholders.profiles.HorizontalProfilesVH;
 import com.nikahtech.muslimnikah.viewholders.dashboard_section_viewholders.profiles.VerticalProfilesVH;
 
 import java.util.List;

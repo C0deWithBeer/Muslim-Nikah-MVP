@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="100dp"
+        app:cardUseCompatPadding="false"
+        android:layout_gravity="center"
+        android:foregroundGravity="center">
+
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:text="Message goes here"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@color/colorSuccess"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="6dp"
+            android:fontFamily="@font/satoshi_medium"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

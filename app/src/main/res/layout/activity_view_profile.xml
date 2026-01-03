@@ -157,7 +157,7 @@
                 app:rounded="true" />
 
             <com.nikahtech.muslimnikah.widgets.MButton
-                android:id="@+id/callBtn"
+                android:id="@+id/callNowBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -198,9 +198,9 @@
                 android:textStyle="bold"
                 app:bottomLeftRadius="10dp"
                 app:bottomRightRadius="10dp"
-                app:layout_constraintBottom_toBottomOf="@+id/callBtn"
-                app:layout_constraintEnd_toStartOf="@+id/callBtn"
-                app:layout_constraintTop_toTopOf="@+id/callBtn"
+                app:layout_constraintBottom_toBottomOf="@+id/callNowBtn"
+                app:layout_constraintEnd_toStartOf="@+id/callNowBtn"
+                app:layout_constraintTop_toTopOf="@+id/callNowBtn"
                 app:strokeColor="#DFB014"
                 app:strokeWidth="1dp"
                 app:topLeftRadius="10dp"

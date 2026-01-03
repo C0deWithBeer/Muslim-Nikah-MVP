@@ -16,11 +16,15 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.nikahtech.muslimnikah.R;
 import com.nikahtech.muslimnikah.databinding.ActivitySplashBinding;
+import com.nikahtech.muslimnikah.keystores.LocalDBManager;
+import com.nikahtech.muslimnikah.utils.SysUtil;
+import com.nikahtech.muslimnikah.utils.ToastUtil;
 
 @SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {
 
     private ActivitySplashBinding binding;
+    private Class<?> nextScreen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,18 +32,30 @@ public class SplashActivity extends AppCompatActivity {
         binding = ActivitySplashBinding.inflate(getLayoutInflater());
         EdgeToEdge.enable(this);
         setContentView(binding.getRoot());
+
+        SysUtil.changeStatusBarColor(this, R.color.colorPrimary);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
+        decideNextScreen();
         animateLogo();
     }
 
-    private void animateLogo() {
+    private void decideNextScreen() {
+        String isLoggedIn = LocalDBManager.getStore(this).get("isLoggedIn");
 
-        // Start from invisible + slightly scaled down
+        if ("true".equalsIgnoreCase(isLoggedIn)) {
+            nextScreen = MainActivity.class;
+        } else {
+            nextScreen = LoginActivity.class;
+        }
+    }
+
+    private void animateLogo() {
         binding.logo.setAlpha(0f);
         binding.logo.setScaleX(0.8f);
         binding.logo.setScaleY(0.8f);
@@ -48,7 +64,7 @@ public class SplashActivity extends AppCompatActivity {
                 .alpha(1f)
                 .scaleX(1f)
                 .scaleY(1f)
-                .setDuration(2500)
+                .setDuration(1800)
                 .setInterpolator(new OvershootInterpolator())
                 .setListener(new Animator.AnimatorListener() {
                     @Override
@@ -58,24 +74,18 @@ public class SplashActivity extends AppCompatActivity {
 
                     @Override
                     public void onAnimationEnd(Animator animator) {
-                        // Make sure final state remains fully visible
-                        binding.logo.setAlpha(1f);
-                        binding.logo.setScaleX(1f);
-                        binding.logo.setScaleY(1f);
-
-                        navigateToLogin();
+                        navigateNext();
                     }
-                    @Override
-                    public void onAnimationCancel(@NonNull Animator animator) {}
-                    @Override
-                    public void onAnimationRepeat(@NonNull Animator animator) {}
+
+                    @Override public void onAnimationCancel(@NonNull Animator animator) {}
+                    @Override public void onAnimationRepeat(@NonNull Animator animator) {}
                 })
                 .start();
     }
 
-    private void navigateToLogin() {
-        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-        startActivity(intent);
+    private void navigateNext() {
+        ToastUtil.show(this, "Hello there", ToastUtil.AppToastType.SUCCESS);
+        startActivity(new Intent(this, nextScreen));
         finish();
     }
 

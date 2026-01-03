@@ -11,10 +11,8 @@ import com.nikahtech.muslimnikah.activities.ListProfilesActivity;
 import com.nikahtech.muslimnikah.adapters.recyclerview_adapters.HorizontalProfilesAdapter;
 import com.nikahtech.muslimnikah.adapters.recyclerview_adapters.skeleton.SkeletonHorizontalAdapter;
 import com.nikahtech.muslimnikah.databinding.ItemDashNearbyBinding;
-import com.nikahtech.muslimnikah.databinding.ItemDashRecentBinding;
 import com.nikahtech.muslimnikah.models.Profile;
 import com.nikahtech.muslimnikah.models.dashboard_sections.Nearby;
-import com.nikahtech.muslimnikah.models.dashboard_sections.Recent;
 
 import java.util.ArrayList;
 import java.util.List;

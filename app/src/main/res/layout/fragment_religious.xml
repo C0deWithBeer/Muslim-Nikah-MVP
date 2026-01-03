@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.create_profile_fragments.ReligiousFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/satoshi_regular"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:text="Religious Details"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <!-- Form Container -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp">
+
+            <!-- Sect (Mandatory) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/sectInputLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxStrokeColor="@color/til_stroke_color"
+                app:hintTextColor="@color/til_hint_color">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/sectEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/satoshi_regular"
+                    android:hint="Sect"
+                    android:inputType="none"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="22dp"
+                    android:paddingBottom="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Caste (Mandatory) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/casteInputLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxStrokeColor="@color/til_stroke_color"
+                app:hintTextColor="@color/til_hint_color">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/casteEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/satoshi_regular"
+                    android:hint="Caste"
+                    android:inputType="none"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="22dp"
+                    android:paddingBottom="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Namaz Frequency (Optional) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/namazInputLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxStrokeColor="@color/til_stroke_color"
+                app:hintTextColor="@color/til_hint_color"
+                app:helperText="Optional">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/namazFrequencyEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/satoshi_regular"
+                    android:hint="Prayer habit"
+                    android:inputType="none"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="22dp"
+                    android:paddingBottom="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Read Quran (Optional) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/quranInputLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxStrokeColor="@color/til_stroke_color"
+                app:hintTextColor="@color/til_hint_color"
+                app:helperText="Optional">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/readQuranEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/satoshi_regular"
+                    android:hint="Quran reading"
+                    android:inputType="none"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="22dp"
+                    android:paddingBottom="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Zakat (Optional) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/halalDietInputLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxStrokeColor="@color/til_stroke_color"
+                app:hintTextColor="@color/til_hint_color"
+                app:helperText="Optional">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/halalDietEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/satoshi_regular"
+                    android:hint="Halal Diet"
+                    android:inputType="none"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="22dp"
+                    android:paddingBottom="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Hajj / Umrah (Optional) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/beardHijabInputLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxStrokeColor="@color/til_stroke_color"
+                app:hintTextColor="@color/til_hint_color"
+                app:helperText="Optional">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/beardHijabEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/satoshi_regular"
+                    android:hint="Beard / Hijab"
+                    android:inputType="none"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="22dp"
+                    android:paddingBottom="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Religious Observation Level (Mandatory) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/religiousLevelInputLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxStrokeColor="@color/til_stroke_color"
+                app:hintTextColor="@color/til_hint_color"
+                app:helperText="Optional">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/religiousLevelEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/satoshi_regular"
+                    android:hint="Religious Involvement"
+                    android:inputType="none"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="22dp"
+                    android:paddingBottom="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <!-- Navigation Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="8dp">
+
+            <!-- Previous Button (Outlined) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/prevBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/satoshi_regular"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="12dp"
+                android:text="Previous"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="13sp"
+                app:backgroundTint="@color/white"
+                app:cornerRadius="10dp"
+                app:elevation="8dp"
+                app:rippleColor="@color/colorSurface"
+                app:strokeColor="@color/colorTextSecondary"
+                app:strokeWidth="1dp" />
+
+            <View
+                android:layout_width="16dp"
+                android:layout_height="match_parent" />
+
+            <!-- Next Button (Filled) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nextBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/satoshi_regular"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="12dp"
+                android:text="Next"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorPrimaryBtn"
+                app:cornerRadius="10dp"
+                app:elevation="8dp"
+                app:rippleColor="@color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

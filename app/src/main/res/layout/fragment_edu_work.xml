@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.create_profile_fragments.EduWorkFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/satoshi_regular"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:text="Education &amp; Work"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <!-- Form Container -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp">
+
+            <!-- Highest Education (Mandatory) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/highestEducationInputLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxStrokeColor="@color/til_stroke_color"
+                app:hintTextColor="@color/til_hint_color">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/highestEducationEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/satoshi_regular"
+                    android:hint="Highest education"
+                    android:inputType="none"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="22dp"
+                    android:paddingBottom="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Field of Study Name (Optional) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fieldOfStudyInputLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                android:layout_marginTop="10dp"
+                app:boxStrokeColor="@color/til_stroke_color"
+                app:hintTextColor="@color/til_hint_color">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fieldOfStudyEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/satoshi_regular"
+                    android:hint="Field of Study"
+                    android:inputType="none"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="22dp"
+                    android:paddingBottom="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Employed In (Mandatory) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/employedInInputLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxStrokeColor="@color/til_stroke_color"
+                app:hintTextColor="@color/til_hint_color">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/employedInEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/satoshi_regular"
+                    android:hint="Employed in"
+                    android:inputType="none"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="22dp"
+                    android:paddingBottom="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Occupation (Mandatory) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/occupationInputLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxStrokeColor="@color/til_stroke_color"
+                app:hintTextColor="@color/til_hint_color">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/occupationEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/satoshi_regular"
+                    android:hint="Occupation"
+                    android:inputType="none"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="22dp"
+                    android:paddingBottom="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Annual Income (Mandatory) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/annualIncomeInputLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxStrokeColor="@color/til_stroke_color"
+                app:hintTextColor="@color/til_hint_color">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/annualIncomeEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/satoshi_regular"
+                    android:hint="Annual income"
+                    android:inputType="none"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="22dp"
+                    android:paddingBottom="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <!-- Navigation Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="8dp">
+
+            <!-- Previous Button (Outlined) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/prevBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/satoshi_regular"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="12dp"
+                android:text="Previous"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="13sp"
+                app:backgroundTint="@color/white"
+                app:cornerRadius="10dp"
+                app:elevation="8dp"
+                app:rippleColor="@color/colorSurface"
+                app:strokeColor="@color/colorTextSecondary"
+                app:strokeWidth="1dp" />
+
+            <View
+                android:layout_width="16dp"
+                android:layout_height="match_parent" />
+
+            <!-- Next Button (Filled) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nextBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/satoshi_regular"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="12dp"
+                android:text="Next"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorPrimaryBtn"
+                app:cornerRadius="10dp"
+                app:elevation="8dp"
+                app:rippleColor="@color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

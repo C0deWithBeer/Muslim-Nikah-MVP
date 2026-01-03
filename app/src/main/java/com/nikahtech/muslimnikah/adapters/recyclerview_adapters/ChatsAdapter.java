@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.nikahtech.muslimnikah.databinding.ItemChatActiveBinding;
 import com.nikahtech.muslimnikah.databinding.ItemChatBinding;
 import com.nikahtech.muslimnikah.models.Chat;
 import com.nikahtech.muslimnikah.viewholders.chats.ChatsVH;

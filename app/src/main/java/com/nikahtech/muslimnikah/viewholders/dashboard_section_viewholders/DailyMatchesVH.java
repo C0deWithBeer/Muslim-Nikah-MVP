@@ -13,7 +13,6 @@ import com.nikahtech.muslimnikah.models.Profile;
 import com.nikahtech.muslimnikah.models.dashboard_sections.DailyMatches;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class DailyMatchesVH extends RecyclerView.ViewHolder{

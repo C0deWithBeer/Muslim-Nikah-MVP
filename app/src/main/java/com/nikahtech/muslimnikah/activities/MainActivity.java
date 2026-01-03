@@ -1,23 +1,28 @@
 package com.nikahtech.muslimnikah.activities;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 
-import com.ismaeldivita.chipnavigation.ChipNavigationBar;
+import com.nikahtech.muslimnikah.Backend.dto.eto.ProfileDto;
 import com.nikahtech.muslimnikah.R;
 import com.nikahtech.muslimnikah.databinding.ActivityMainBinding;
 import com.nikahtech.muslimnikah.fragments.main_fragments.AccountFragment;
 import com.nikahtech.muslimnikah.fragments.main_fragments.ChatFragment;
 import com.nikahtech.muslimnikah.fragments.main_fragments.DashboardFragment;
 import com.nikahtech.muslimnikah.fragments.main_fragments.SearchFragment;
+import com.nikahtech.muslimnikah.keystores.LocalDBManager;
+import com.nikahtech.muslimnikah.utils.JSONUtil;
+import com.nikahtech.muslimnikah.utils.SysUtil;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,6 +48,26 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+
+        SysUtil.setStatusBar(this, ContextCompat.getColor(this, R.color.colorPrimary), false);
+
+        String profileJson = LocalDBManager.getStore(this).get("profile");
+
+        if (profileJson != null && !profileJson.isEmpty()) {
+            ProfileDto savedOne = JSONUtil.fromJson(profileJson, ProfileDto.class);
+
+            if (savedOne != null) {
+                Log.d("Saved Profile", savedOne.toString());
+            } else {
+                Log.w("Saved Profile", "Failed to parse profile JSON");
+            }
+        } else {
+            Log.w("Saved Profile", "No profile found in local storage");
+        }
+
+
+
 
         // SETUP: add all fragments once
         getSupportFragmentManager().beginTransaction()

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1041284473269",
+    "project_id": "muslim-nikah-b6443",
+    "storage_bucket": "muslim-nikah-b6443.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1041284473269:android:9c7708a53cb2eb893bf9fc",
+        "android_client_info": {
+          "package_name": "com.codewithbeer.muslimnikah"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7GkH3eTIbYe7_KQP_tjE8wkeykb-Yx2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1041284473269:android:78fc39ab47c9b7383bf9fc",
+        "android_client_info": {
+          "package_name": "com.nikahtech.muslimnikah"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7GkH3eTIbYe7_KQP_tjE8wkeykb-Yx2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

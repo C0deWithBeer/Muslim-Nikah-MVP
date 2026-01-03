@@ -18,7 +18,6 @@ import com.nikahtech.muslimnikah.R;
 import com.nikahtech.muslimnikah.databinding.ActivitySubscriptionBinding;
 import com.nikahtech.muslimnikah.fragments.subscription_fragments.ActiveFragment;
 import com.nikahtech.muslimnikah.fragments.subscription_fragments.PlansFragment;
-import com.nikahtech.muslimnikah.fragments.subscription_fragments.AddOnsFragment;
 import com.nikahtech.muslimnikah.widgets.MButton;
 
 import java.util.Arrays;

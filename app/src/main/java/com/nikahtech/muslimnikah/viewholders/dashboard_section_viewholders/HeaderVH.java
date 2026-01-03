@@ -3,6 +3,7 @@ package com.nikahtech.muslimnikah.viewholders.dashboard_section_viewholders;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,6 +24,8 @@ public class HeaderVH extends RecyclerView.ViewHolder{
     }
 
     public void bind(Header model, Context context) {
+
+        Log.d("TAG", "Header: profileImg: "+model.getProfilePic());
         Glide.with(context)
                 .load(model.getProfilePic())
                 .into(binding.profilePic);

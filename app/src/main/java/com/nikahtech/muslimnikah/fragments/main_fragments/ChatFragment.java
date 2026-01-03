@@ -3,16 +3,14 @@ package com.nikahtech.muslimnikah.fragments.main_fragments;
 import static com.nikahtech.muslimnikah.utils.UIUtil.dp;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import com.nikahtech.muslimnikah.R;
 import com.nikahtech.muslimnikah.adapters.recyclerview_adapters.ActiveUsersAdapter;
 import com.nikahtech.muslimnikah.adapters.recyclerview_adapters.ChatsAdapter;
 import com.nikahtech.muslimnikah.databinding.FragmentChatBinding;
@@ -67,9 +65,9 @@ public class ChatFragment extends Fragment {
 
         binding.chatsRc.addItemDecoration(
                 new RecyclerPaddingDecorator(
-                        dp(16),  // first item = 16dp
-                        dp(32),  // last item = 32dp
-                        dp(24),   // spacing between items = 24dp
+                        dp(2),  // first item = 16dp
+                        dp(2),  // last item = 32dp
+                        dp(16),   // spacing between items = 24dp
                         RecyclerView.VERTICAL
                 )
         );

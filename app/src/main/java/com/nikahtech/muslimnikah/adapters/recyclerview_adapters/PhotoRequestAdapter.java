@@ -7,17 +7,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.nikahtech.muslimnikah.constants.DashboardSectionType;
 import com.nikahtech.muslimnikah.constants.PhotoRequestType;
-import com.nikahtech.muslimnikah.databinding.ItemDashHeaderBinding;
 import com.nikahtech.muslimnikah.databinding.ItemPhotoreqReceivedBinding;
 import com.nikahtech.muslimnikah.databinding.ItemPhotoreqSentBinding;
-import com.nikahtech.muslimnikah.interfaces.DashboardSection;
 import com.nikahtech.muslimnikah.models.PhotoRequest;
-import com.nikahtech.muslimnikah.models.dashboard_sections.DailyMatches;
-import com.nikahtech.muslimnikah.models.dashboard_sections.Header;
-import com.nikahtech.muslimnikah.viewholders.dashboard_section_viewholders.DailyMatchesVH;
-import com.nikahtech.muslimnikah.viewholders.dashboard_section_viewholders.HeaderVH;
 import com.nikahtech.muslimnikah.viewholders.photoreq_viewholders.ReceivedVH;
 import com.nikahtech.muslimnikah.viewholders.photoreq_viewholders.SentVH;
 

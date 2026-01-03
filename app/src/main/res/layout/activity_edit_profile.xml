@@ -8,7 +8,7 @@
     tools:context=".activities.EditProfileActivity">
 
     <com.nikahtech.muslimnikah.widgets.MImageButton
-        android:id="@+id/MImageButton"
+        android:id="@+id/backBtn"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
@@ -31,13 +31,13 @@
         android:textColor="@color/black"
         android:textSize="17sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/MImageButton"
+        app:layout_constraintBottom_toBottomOf="@+id/backBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/MImageButton" />
+        app:layout_constraintTop_toTopOf="@+id/backBtn" />
 
     <com.nikahtech.muslimnikah.widgets.MImageButton
-        android:id="@+id/MImageButton2"
+        android:id="@+id/viewProfileBtn"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginTop="16dp"
@@ -56,20 +56,18 @@
         android:id="@+id/MCardView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        app:backgroundColor="@color/colorPrimaryDark"
-        app:cornerRadius="10dp"
+        app:backgroundColor="@color/colorTextPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MImageButton">
+        app:layout_constraintTop_toBottomOf="@+id/backBtn">
 
         <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
-            app:tabBackground="@color/colorPrimaryDark"
+            app:tabBackground="@color/colorTextPrimary"
             app:tabGravity="start"
             app:tabIndicatorAnimationMode="elastic"
             app:tabIndicatorColor="@color/colorAlert"
@@ -77,9 +75,9 @@
             app:tabIndicatorHeight="4dp"
             app:tabMode="scrollable"
             app:tabSelectedTextAppearance="@style/EditProfileTabLayTextSelected"
-            app:tabSelectedTextColor="@color/white"
+            app:tabSelectedTextColor="@color/colorAccent"
             app:tabTextAppearance="@style/EditProfileTabLayText"
-            app:tabTextColor="@color/colorTextMuted">
+            app:tabTextColor="@color/colorSurface">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
@@ -90,6 +88,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Basic Details" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contact Details" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
@@ -114,6 +117,7 @@
     </com.nikahtech.muslimnikah.widgets.MCardView>
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
@@ -129,6 +133,7 @@
             android:orientation="vertical">
 
             <com.nikahtech.muslimnikah.widgets.MCardView
+                android:id="@+id/section_photos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardElevation="8dp"
@@ -154,63 +159,18 @@
                         android:textSize="17sp"
                         tools:ignore="HardcodedText" />
 
-                    <HorizontalScrollView
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/photosRecycler"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:scrollbars="none">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_marginVertical="12dp"
-                            android:layout_marginStart="16dp">
-
-                            <com.makeramen.roundedimageview.RoundedImageView
-                                android:layout_width="80dp"
-                                android:layout_height="80dp"
-                                app:riv_corner_radius="12dp"
-                                android:src="@drawable/portait"
-                                android:scaleType="centerCrop"
-                                app:riv_border_color="@color/colorAlert"
-                                app:riv_border_width="2dp"/>
-
-                            <com.makeramen.roundedimageview.RoundedImageView
-                                android:layout_width="80dp"
-                                android:layout_height="80dp"
-                                app:riv_corner_radius="12dp"
-                                android:src="@drawable/portait"
-                                android:scaleType="centerCrop"
-                                android:layout_marginStart="16dp"
-                                app:riv_border_color="@color/colorTextSecondary"
-                                app:riv_border_width="2dp"/>
-
-                            <com.makeramen.roundedimageview.RoundedImageView
-                                android:layout_width="80dp"
-                                android:layout_height="80dp"
-                                app:riv_corner_radius="12dp"
-                                android:src="@drawable/portait"
-                                android:scaleType="centerCrop"
-                                android:layout_marginStart="16dp"
-                                app:riv_border_color="@color/colorTextSecondary"
-                                app:riv_border_width="2dp"/>
-
-                            <com.makeramen.roundedimageview.RoundedImageView
-                                android:layout_width="80dp"
-                                android:layout_height="80dp"
-                                app:riv_corner_radius="12dp"
-                                android:src="@drawable/portait"
-                                android:scaleType="centerCrop"
-                                android:layout_marginStart="16dp"
-                                app:riv_border_color="@color/colorTextSecondary"
-                                app:riv_border_width="2dp"/>
-
-                        </LinearLayout>
-                    </HorizontalScrollView>
+                        android:layout_marginTop="8dp"
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_height="100dp"/>
 
                 </LinearLayout>
             </com.nikahtech.muslimnikah.widgets.MCardView>
 
             <com.nikahtech.muslimnikah.widgets.MCardView
+                android:id="@+id/section_basic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardElevation="8dp"
@@ -223,12 +183,12 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="16dp">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="16dp"
                         android:fontFamily="@font/semibold"
                         android:lineSpacingExtra="5dp"
                         android:text="Basic Info"
@@ -237,123 +197,246 @@
                         android:textSize="17sp"
                         tools:ignore="HardcodedText" />
 
-                    <com.nikahtech.muslimnikah.widgets.MEditText
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/profileCreatedByInputLay"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
                         android:layout_marginTop="10dp"
-                        android:drawableTint="@color/colorTextHint"
-                        android:layout_marginEnd="16dp"
-                        android:background="@color/white"
-                        android:drawableStart="@drawable/icon_email"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/regular"
-                        android:hint="Full Name"
-                        android:padding="12dp"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/colorTextPrimary"
-                        android:textSize="16sp"
-                        app:cornerRadius="10dp"
-                        app:strokeColor="@color/colorTextHint"
-                        app:strokeHighlightColor="@color/colorPrimaryDark"
-                        app:strokeWidth="1dp"
-                        tools:ignore="HardcodedText" />
+                        app:boxStrokeColor="@color/til_stroke_color"
+                        app:boxStrokeWidth="1dp"
+                        app:boxStrokeWidthFocused="1.5dp"
+                        app:hintTextColor="@color/til_hint_color">
 
-                    <com.nikahtech.muslimnikah.widgets.MEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:drawableTint="@color/colorTextHint"
-                        android:layout_marginEnd="16dp"
-                        android:background="@color/white"
-                        android:drawableStart="@drawable/icon_email"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/regular"
-                        android:hint="Gender"
-                        android:padding="12dp"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/colorTextPrimary"
-                        android:textSize="16sp"
-                        app:cornerRadius="10dp"
-                        app:strokeColor="@color/colorTextHint"
-                        app:strokeHighlightColor="@color/colorPrimaryDark"
-                        app:strokeWidth="1dp"
-                        tools:ignore="HardcodedText" />
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/profileCreatedByEdt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:cursorVisible="false"
+                            android:focusableInTouchMode="true"
+                            android:focusedByDefault="false"
+                            android:fontFamily="@font/satoshi_regular"
+                            android:hint="Profile Created By"
+                            android:inputType="none"
+                            android:paddingHorizontal="16dp"
+                            android:paddingTop="22dp"
+                            android:paddingBottom="16dp"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.nikahtech.muslimnikah.widgets.MEditText
-                        android:id="@+id/MEditText3"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/fullNameInputLay"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
                         android:layout_marginTop="10dp"
-                        android:drawableTint="@color/colorTextHint"
-                        android:layout_marginEnd="16dp"
-                        android:background="@color/white"
-                        android:drawableStart="@drawable/icon_email"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/regular"
-                        android:hint="Date of Birth"
-                        android:padding="12dp"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/colorTextPrimary"
-                        android:textSize="16sp"
-                        app:cornerRadius="10dp"
-                        app:strokeColor="@color/colorTextHint"
-                        app:strokeHighlightColor="@color/colorPrimaryDark"
-                        app:strokeWidth="1dp"
-                        tools:ignore="HardcodedText" />
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:cursorColor="@color/black"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxStrokeColor="@color/til_stroke_color"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="50"
+                        app:helperText="As per official documents"
+                        app:helperTextEnabled="false"
+                        app:hintTextColor="@color/til_hint_color">
 
-                    <com.nikahtech.muslimnikah.widgets.MEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:drawableTint="@color/colorTextHint"
-                        android:layout_marginEnd="16dp"
-                        android:background="@color/white"
-                        android:drawableStart="@drawable/icon_email"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/regular"
-                        android:hint="Height"
-                        android:padding="12dp"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/colorTextPrimary"
-                        android:textSize="16sp"
-                        app:cornerRadius="10dp"
-                        app:strokeColor="@color/colorTextHint"
-                        app:strokeHighlightColor="@color/colorPrimaryDark"
-                        app:strokeWidth="1dp"
-                        tools:ignore="HardcodedText" />
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/fullNameEdt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:fontFamily="@font/satoshi_regular"
+                            android:hint="Full Name"
+                            android:textCursorDrawable="@drawable/cursor"
+                            android:cursorVisible="true"
+                            android:inputType="textPersonName|textNoSuggestions"
+                            android:paddingHorizontal="16dp"
+                            android:paddingTop="22dp"
+                            android:paddingBottom="16dp"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.nikahtech.muslimnikah.widgets.MEditText
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/genderInputLay"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginBottom="16dp"
-                        android:drawableTint="@color/colorTextHint"
-                        android:layout_marginEnd="16dp"
-                        android:background="@color/white"
-                        android:drawableStart="@drawable/icon_email"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/regular"
-                        android:hint="Marital Status"
-                        android:padding="12dp"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/colorTextPrimary"
-                        android:textSize="16sp"
-                        app:cornerRadius="10dp"
-                        app:strokeColor="@color/colorTextHint"
-                        app:strokeHighlightColor="@color/colorPrimaryDark"
-                        app:strokeWidth="1dp"
-                        tools:ignore="HardcodedText" />
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxStrokeColor="@color/til_stroke_color"
+                        app:hintTextColor="@color/til_hint_color">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/genderEdt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:cursorVisible="false"
+                            android:focusableInTouchMode="true"
+                            android:focusedByDefault="false"
+                            android:fontFamily="@font/satoshi_regular"
+                            android:hint="Gender"
+                            android:inputType="none"
+                            android:paddingHorizontal="16dp"
+                            android:paddingTop="22dp"
+                            android:paddingBottom="16dp"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/dobInputLay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxStrokeColor="@color/til_stroke_color"
+                        app:hintTextColor="@color/til_hint_color">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/dobEdt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:cursorVisible="false"
+                            android:focusable="false"
+                            android:focusableInTouchMode="true"
+                            android:focusedByDefault="false"
+                            android:fontFamily="@font/satoshi_regular"
+                            android:hint="Date of birth"
+                            android:inputType="none"
+                            android:paddingHorizontal="16dp"
+                            android:paddingTop="22dp"
+                            android:paddingBottom="16dp"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/heightInputLay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxStrokeColor="@color/til_stroke_color"
+                        app:hintTextColor="@color/til_hint_color">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/heightEdt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:cursorVisible="false"
+                            android:focusableInTouchMode="true"
+                            android:focusedByDefault="false"
+                            android:fontFamily="@font/satoshi_regular"
+                            android:hint="Height (ft)"
+                            android:inputType="none"
+                            android:paddingHorizontal="16dp"
+                            android:paddingTop="22dp"
+                            android:paddingBottom="16dp"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Marital Status -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/maritalStatusInputLay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxStrokeColor="@color/til_stroke_color"
+                        app:hintTextColor="@color/til_hint_color">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/maritalStatusEdt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:cursorVisible="false"
+                            android:focusableInTouchMode="true"
+                            android:focusedByDefault="false"
+                            android:fontFamily="@font/satoshi_regular"
+                            android:hint="Marital status"
+                            android:inputType="none"
+                            android:paddingHorizontal="16dp"
+                            android:paddingTop="22dp"
+                            android:paddingBottom="16dp"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Disability -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/disabilityInputLay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="18dp"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxStrokeColor="@color/til_stroke_color"
+                        app:hintTextColor="@color/til_hint_color">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/disabilityEdt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:cursorVisible="false"
+                            android:focusableInTouchMode="true"
+                            android:focusedByDefault="false"
+                            android:fontFamily="@font/satoshi_regular"
+                            android:hint="Disability"
+                            android:inputType="none"
+                            android:paddingHorizontal="16dp"
+                            android:paddingTop="22dp"
+                            android:paddingBottom="16dp"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
             </com.nikahtech.muslimnikah.widgets.MCardView>
 
 
             <com.nikahtech.muslimnikah.widgets.MCardView
+                android:id="@+id/section_contact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardElevation="8dp"
@@ -371,7 +454,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="16dp"
                         android:fontFamily="@font/semibold"
                         android:lineSpacingExtra="5dp"
                         android:text="Contact Info"
@@ -380,399 +463,734 @@
                         android:textSize="17sp"
                         tools:ignore="HardcodedText" />
 
-                    <com.nikahtech.muslimnikah.widgets.MEditText
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/phoneInputLay"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
                         android:layout_marginTop="10dp"
-                        android:drawableTint="@color/colorTextHint"
-                        android:layout_marginEnd="16dp"
-                        android:background="@color/white"
-                        android:drawableStart="@drawable/icon_email"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/regular"
-                        android:hint="Phone number"
-                        android:padding="12dp"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/colorTextPrimary"
-                        android:textSize="16sp"
-                        app:cornerRadius="10dp"
-                        app:strokeColor="@color/colorTextHint"
-                        app:strokeHighlightColor="@color/colorPrimaryDark"
-                        app:strokeWidth="1dp"
-                        tools:ignore="HardcodedText" />
+                        android:layout_marginHorizontal="16dp"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:cursorColor="@color/black"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxStrokeColor="@color/til_stroke_color"
+                        app:hintTextColor="@color/til_hint_color">
 
-                    <com.nikahtech.muslimnikah.widgets.MEditText
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/phoneEdt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:focusableInTouchMode="true"
+                            android:textCursorDrawable="@drawable/cursor"
+                            android:cursorVisible="true"
+                            android:fontFamily="@font/satoshi_regular"
+                            android:hint="Phone number"
+                            android:inputType="none"
+                            android:paddingHorizontal="16dp"
+                            android:paddingTop="22dp"
+                            android:paddingBottom="16dp"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/emailInputLay"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginBottom="16dp"
-                        android:drawableTint="@color/colorTextHint"
-                        android:layout_marginEnd="16dp"
-                        android:background="@color/white"
-                        android:drawableStart="@drawable/icon_email"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/regular"
-                        android:hint="Email Address"
-                        android:padding="12dp"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/colorTextPrimary"
-                        android:textSize="16sp"
-                        app:cornerRadius="10dp"
-                        app:strokeColor="@color/colorTextHint"
-                        app:strokeHighlightColor="@color/colorPrimaryDark"
-                        app:strokeWidth="1dp"
-                        tools:ignore="HardcodedText" />
+                        android:layout_marginBottom="18dp"
+                        android:layout_marginHorizontal="16dp"
+                        app:boxBackgroundMode="outline"
+                        app:cursorColor="@color/black"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxStrokeColor="@color/til_stroke_color"
+                        app:hintTextColor="@color/til_hint_color">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/emailEdt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:focusableInTouchMode="true"
+                            android:textCursorDrawable="@drawable/cursor"
+                            android:cursorVisible="true"
+                            android:fontFamily="@font/satoshi_regular"
+                            android:hint="Email Address"
+                            android:inputType="none"
+                            android:paddingHorizontal="16dp"
+                            android:paddingTop="22dp"
+                            android:paddingBottom="16dp"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
             </com.nikahtech.muslimnikah.widgets.MCardView>
 
             <com.nikahtech.muslimnikah.widgets.MCardView
+                android:id="@+id/section_edu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="8dp"
                 app:cardElevation="8dp"
                 app:topLeftRadius="10dp"
                 app:topRightRadius="10dp"
                 app:bottomLeftRadius="10dp"
-                app:bottomRightRadius="10dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginHorizontal="8dp">
+                app:bottomRightRadius="10dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
 
+                    <!-- Section Title -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="16dp"
                         android:fontFamily="@font/semibold"
                         android:lineSpacingExtra="5dp"
-                        android:text="Edu &amp; Profession"
-                        android:textAlignment="viewStart"
+                        android:text="Education &amp; Work"
                         android:textColor="@color/black"
                         android:textSize="17sp"
                         tools:ignore="HardcodedText" />
 
-                    <com.nikahtech.muslimnikah.widgets.MEditText
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:drawableTint="@color/colorTextHint"
-                        android:layout_marginEnd="16dp"
-                        android:background="@color/white"
-                        android:drawableStart="@drawable/icon_email"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/regular"
-                        android:hint="Highest Education"
-                        android:padding="12dp"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/colorTextPrimary"
-                        android:textSize="16sp"
-                        app:cornerRadius="10dp"
-                        app:strokeColor="@color/colorTextHint"
-                        app:strokeHighlightColor="@color/colorPrimaryDark"
-                        app:strokeWidth="1dp"
-                        tools:ignore="HardcodedText" />
+                        android:orientation="vertical"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginBottom="16dp">
 
-                    <com.nikahtech.muslimnikah.widgets.MEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:drawableTint="@color/colorTextHint"
-                        android:layout_marginEnd="16dp"
-                        android:background="@color/white"
-                        android:drawableStart="@drawable/icon_email"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/regular"
-                        android:hint="Employed In"
-                        android:padding="12dp"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/colorTextPrimary"
-                        android:textSize="16sp"
-                        app:cornerRadius="10dp"
-                        app:strokeColor="@color/colorTextHint"
-                        app:strokeHighlightColor="@color/colorPrimaryDark"
-                        app:strokeWidth="1dp"
-                        tools:ignore="HardcodedText" />
+                        <!-- Highest Education -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/highestEducationInputLay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:boxBackgroundMode="outline"
+                            app:boxCornerRadiusTopStart="10dp"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxStrokeColor="@color/til_stroke_color"
+                            app:hintTextColor="@color/til_hint_color">
 
-                    <com.nikahtech.muslimnikah.widgets.MEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:drawableTint="@color/colorTextHint"
-                        android:layout_marginEnd="16dp"
-                        android:background="@color/white"
-                        android:drawableStart="@drawable/icon_email"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/regular"
-                        android:hint="Occupation"
-                        android:padding="12dp"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/colorTextPrimary"
-                        android:textSize="16sp"
-                        app:cornerRadius="10dp"
-                        app:strokeColor="@color/colorTextHint"
-                        app:strokeHighlightColor="@color/colorPrimaryDark"
-                        app:strokeWidth="1dp"
-                        tools:ignore="HardcodedText" />
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/highestEducationEdt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:cursorVisible="false"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/satoshi_regular"
+                                android:hint="Highest education"
+                                android:inputType="none"
+                                android:paddingHorizontal="16dp"
+                                android:paddingTop="22dp"
+                                android:paddingBottom="16dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.nikahtech.muslimnikah.widgets.MEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="16dp"
-                        android:drawableTint="@color/colorTextHint"
-                        android:layout_marginEnd="16dp"
-                        android:background="@color/white"
-                        android:drawableStart="@drawable/icon_email"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/regular"
-                        android:hint="Annual Income"
-                        android:padding="12dp"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/colorTextPrimary"
-                        android:textSize="16sp"
-                        app:cornerRadius="10dp"
-                        app:strokeColor="@color/colorTextHint"
-                        app:strokeHighlightColor="@color/colorPrimaryDark"
-                        app:strokeWidth="1dp"
-                        tools:ignore="HardcodedText" />
+                        <!-- Field of Study -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/fieldOfStudyInputLay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:boxBackgroundMode="outline"
+                            app:boxCornerRadiusTopStart="10dp"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxStrokeColor="@color/til_stroke_color"
+                            app:hintTextColor="@color/til_hint_color">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/fieldOfStudyEdt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:cursorVisible="false"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/satoshi_regular"
+                                android:hint="Field of study"
+                                android:inputType="none"
+                                android:paddingHorizontal="16dp"
+                                android:paddingTop="22dp"
+                                android:paddingBottom="16dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- Employed In -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/employedInInputLay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:boxBackgroundMode="outline"
+                            app:boxCornerRadiusTopStart="10dp"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxStrokeColor="@color/til_stroke_color"
+                            app:hintTextColor="@color/til_hint_color">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/employedInEdt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:cursorVisible="false"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/satoshi_regular"
+                                android:hint="Employed in"
+                                android:inputType="none"
+                                android:paddingHorizontal="16dp"
+                                android:paddingTop="22dp"
+                                android:paddingBottom="16dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- Occupation -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/occupationInputLay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:boxBackgroundMode="outline"
+                            app:boxCornerRadiusTopStart="10dp"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxStrokeColor="@color/til_stroke_color"
+                            app:hintTextColor="@color/til_hint_color">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/occupationEdt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:cursorVisible="false"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/satoshi_regular"
+                                android:hint="Occupation"
+                                android:inputType="none"
+                                android:paddingHorizontal="16dp"
+                                android:paddingTop="22dp"
+                                android:paddingBottom="16dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- Annual Income -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/annualIncomeInputLay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:boxBackgroundMode="outline"
+                            app:boxCornerRadiusTopStart="10dp"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxStrokeColor="@color/til_stroke_color"
+                            app:hintTextColor="@color/til_hint_color">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/annualIncomeEdt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:cursorVisible="false"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/satoshi_regular"
+                                android:hint="Annual income"
+                                android:inputType="none"
+                                android:paddingHorizontal="16dp"
+                                android:paddingTop="22dp"
+                                android:paddingBottom="16dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
 
                 </LinearLayout>
+
             </com.nikahtech.muslimnikah.widgets.MCardView>
 
 
 
+
             <com.nikahtech.muslimnikah.widgets.MCardView
+                android:id="@+id/section_location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="8dp"
                 app:cardElevation="8dp"
                 app:topLeftRadius="10dp"
                 app:topRightRadius="10dp"
                 app:bottomLeftRadius="10dp"
-                app:bottomRightRadius="10dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginHorizontal="8dp">
+                app:bottomRightRadius="10dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
 
+                    <!-- Section Title -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="16dp"
                         android:fontFamily="@font/semibold"
-                        android:lineSpacingExtra="5dp"
-                        android:text="Location"
-                        android:textAlignment="viewStart"
+                        android:text="Location Details"
                         android:textColor="@color/black"
                         android:textSize="17sp"
                         tools:ignore="HardcodedText" />
 
-                    <com.nikahtech.muslimnikah.widgets.MEditText
+                    <!-- Form Container -->
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:drawableTint="@color/colorTextHint"
-                        android:layout_marginEnd="16dp"
-                        android:background="@color/white"
-                        android:drawableStart="@drawable/icon_email"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/regular"
-                        android:hint="Country"
-                        android:padding="12dp"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/colorTextPrimary"
-                        android:textSize="16sp"
-                        app:cornerRadius="10dp"
-                        app:strokeColor="@color/colorTextHint"
-                        app:strokeHighlightColor="@color/colorPrimaryDark"
-                        app:strokeWidth="1dp"
-                        tools:ignore="HardcodedText" />
+                        android:orientation="vertical"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginBottom="16dp">
 
-                    <com.nikahtech.muslimnikah.widgets.MEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:drawableTint="@color/colorTextHint"
-                        android:layout_marginEnd="16dp"
-                        android:background="@color/white"
-                        android:drawableStart="@drawable/icon_email"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/regular"
-                        android:hint="State"
-                        android:padding="12dp"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/colorTextPrimary"
-                        android:textSize="16sp"
-                        app:cornerRadius="10dp"
-                        app:strokeColor="@color/colorTextHint"
-                        app:strokeHighlightColor="@color/colorPrimaryDark"
-                        app:strokeWidth="1dp"
-                        tools:ignore="HardcodedText" />
+                        <!-- City -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/cityInputLay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:boxBackgroundMode="outline"
+                            app:boxCornerRadiusTopStart="10dp"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            app:cursorColor="@color/black"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxStrokeColor="@color/til_stroke_color"
+                            app:hintTextColor="@color/til_hint_color">
 
-                    <com.nikahtech.muslimnikah.widgets.MEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:drawableTint="@color/colorTextHint"
-                        android:layout_marginEnd="16dp"
-                        android:background="@color/white"
-                        android:drawableStart="@drawable/icon_email"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/regular"
-                        android:hint="District / City"
-                        android:padding="12dp"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/colorTextPrimary"
-                        android:textSize="16sp"
-                        app:cornerRadius="10dp"
-                        app:strokeColor="@color/colorTextHint"
-                        app:strokeHighlightColor="@color/colorPrimaryDark"
-                        app:strokeWidth="1dp"
-                        tools:ignore="HardcodedText" />
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/cityEdt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:textCursorDrawable="@drawable/cursor"
+                                android:cursorVisible="true"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/satoshi_regular"
+                                android:hint="City / District"
+                                android:inputType="none"
+                                android:paddingHorizontal="16dp"
+                                android:paddingTop="22dp"
+                                android:paddingBottom="16dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.nikahtech.muslimnikah.widgets.MEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="16dp"
-                        android:drawableTint="@color/colorTextHint"
-                        android:layout_marginEnd="16dp"
-                        android:background="@color/white"
-                        android:drawableStart="@drawable/icon_email"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/regular"
-                        android:hint="Mother Tongue"
-                        android:padding="12dp"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/colorTextPrimary"
-                        android:textSize="16sp"
-                        app:cornerRadius="10dp"
-                        app:strokeColor="@color/colorTextHint"
-                        app:strokeHighlightColor="@color/colorPrimaryDark"
-                        app:strokeWidth="1dp"
-                        tools:ignore="HardcodedText" />
+                        <!-- State -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/stateInputLay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:boxBackgroundMode="outline"
+                            app:boxCornerRadiusTopStart="10dp"
+                            app:cursorColor="@color/black"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxStrokeColor="@color/til_stroke_color"
+                            app:hintTextColor="@color/til_hint_color">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/stateEdt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/satoshi_regular"
+                                android:hint="State"
+                                android:textCursorDrawable="@drawable/cursor"
+                                android:cursorVisible="true"
+                                android:inputType="none"
+                                android:paddingHorizontal="16dp"
+                                android:paddingTop="22dp"
+                                android:paddingBottom="16dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- Country -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/countryInputLay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:boxBackgroundMode="outline"
+                            app:boxCornerRadiusTopStart="10dp"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxStrokeColor="@color/til_stroke_color"
+                            app:hintTextColor="@color/til_hint_color">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/countryEdt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:cursorVisible="false"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/satoshi_regular"
+                                android:hint="Country"
+                                android:inputType="none"
+                                android:paddingHorizontal="16dp"
+                                android:paddingTop="22dp"
+                                android:paddingBottom="16dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- Mother Tongue -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/motherTongueInputLay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:boxBackgroundMode="outline"
+                            app:boxCornerRadiusTopStart="10dp"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxStrokeColor="@color/til_stroke_color"
+                            app:hintTextColor="@color/til_hint_color">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/motherTongueEdt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:cursorVisible="false"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/satoshi_regular"
+                                android:hint="Mother tongue"
+                                android:inputType="none"
+                                android:paddingHorizontal="16dp"
+                                android:paddingTop="22dp"
+                                android:paddingBottom="16dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
 
                 </LinearLayout>
+
             </com.nikahtech.muslimnikah.widgets.MCardView>
 
 
 
             <com.nikahtech.muslimnikah.widgets.MCardView
+                android:id="@+id/section_religious"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="8dp"
                 app:cardElevation="8dp"
                 app:topLeftRadius="10dp"
                 app:topRightRadius="10dp"
                 app:bottomLeftRadius="10dp"
-                app:bottomRightRadius="10dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginHorizontal="8dp">
+                app:bottomRightRadius="10dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
 
+                    <!-- Section Title -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="16dp"
                         android:fontFamily="@font/semibold"
-                        android:lineSpacingExtra="5dp"
-                        android:text="Religious Info"
-                        android:textAlignment="viewStart"
+                        android:text="Religious Details"
                         android:textColor="@color/black"
                         android:textSize="17sp"
                         tools:ignore="HardcodedText" />
 
-                    <com.nikahtech.muslimnikah.widgets.MEditText
+                    <!-- Form Container -->
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:drawableTint="@color/colorTextHint"
-                        android:layout_marginEnd="16dp"
-                        android:background="@color/white"
-                        android:drawableStart="@drawable/icon_email"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/regular"
-                        android:hint="Sect"
-                        android:padding="12dp"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/colorTextPrimary"
-                        android:textSize="16sp"
-                        app:cornerRadius="10dp"
-                        app:strokeColor="@color/colorTextHint"
-                        app:strokeHighlightColor="@color/colorPrimaryDark"
-                        app:strokeWidth="1dp"
-                        tools:ignore="HardcodedText" />
-
-                    <com.nikahtech.muslimnikah.widgets.MEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
-                        android:drawableTint="@color/colorTextHint"
-                        android:layout_marginEnd="16dp"
-                        android:background="@color/white"
-                        android:drawableStart="@drawable/icon_email"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/regular"
-                        android:hint="Caste"
-                        android:padding="12dp"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/colorTextPrimary"
-                        android:textSize="16sp"
-                        app:cornerRadius="10dp"
-                        app:strokeColor="@color/colorTextHint"
-                        app:strokeHighlightColor="@color/colorPrimaryDark"
-                        app:strokeWidth="1dp"
-                        tools:ignore="HardcodedText" />
-
-                    <com.nikahtech.muslimnikah.widgets.MEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginHorizontal="16dp"
                         android:layout_marginBottom="16dp"
-                        android:drawableTint="@color/colorTextHint"
-                        android:layout_marginEnd="16dp"
-                        android:background="@color/white"
-                        android:drawableStart="@drawable/icon_email"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/regular"
-                        android:hint="Religious Level"
-                        android:padding="12dp"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/colorTextPrimary"
-                        android:textSize="16sp"
-                        app:cornerRadius="10dp"
-                        app:strokeColor="@color/colorTextHint"
-                        app:strokeHighlightColor="@color/colorPrimaryDark"
-                        app:strokeWidth="1dp"
-                        tools:ignore="HardcodedText" />
+                        android:orientation="vertical">
+
+                        <!-- Sect -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/sectInputLay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:boxBackgroundMode="outline"
+                            app:boxCornerRadiusTopStart="10dp"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxStrokeColor="@color/til_stroke_color"
+                            app:hintTextColor="@color/til_hint_color">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/sectEdt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:cursorVisible="false"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/satoshi_regular"
+                                android:hint="Sect"
+                                android:inputType="none"
+                                android:paddingHorizontal="16dp"
+                                android:paddingTop="22dp"
+                                android:paddingBottom="16dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- Caste -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/casteInputLay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:boxBackgroundMode="outline"
+                            app:boxCornerRadiusTopStart="10dp"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxStrokeColor="@color/til_stroke_color"
+                            app:hintTextColor="@color/til_hint_color">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/casteEdt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:cursorVisible="false"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/satoshi_regular"
+                                android:hint="Caste"
+                                android:inputType="none"
+                                android:paddingHorizontal="16dp"
+                                android:paddingTop="22dp"
+                                android:paddingBottom="16dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- Namaz -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/namazInputLay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:boxBackgroundMode="outline"
+                            app:boxCornerRadiusTopStart="10dp"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxStrokeColor="@color/til_stroke_color"
+                            app:hintTextColor="@color/til_hint_color">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/namazFrequencyEdt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:cursorVisible="false"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/satoshi_regular"
+                                android:hint="Prayer habit"
+                                android:inputType="none"
+                                android:paddingHorizontal="16dp"
+                                android:paddingTop="22dp"
+                                android:paddingBottom="16dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- Quran -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/quranInputLay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:boxBackgroundMode="outline"
+                            app:boxCornerRadiusTopStart="10dp"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxStrokeColor="@color/til_stroke_color"
+                            app:hintTextColor="@color/til_hint_color"
+                            app:helperTextEnabled="false">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/readQuranEdt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:cursorVisible="false"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/satoshi_regular"
+                                android:hint="Quran reading"
+                                android:inputType="none"
+                                android:paddingHorizontal="16dp"
+                                android:paddingTop="22dp"
+                                android:paddingBottom="16dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- Halal Diet -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/halalDietInputLay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:boxBackgroundMode="outline"
+                            app:boxCornerRadiusTopStart="10dp"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxStrokeColor="@color/til_stroke_color"
+                            app:hintTextColor="@color/til_hint_color">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/halalDietEdt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:cursorVisible="false"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/satoshi_regular"
+                                android:hint="Halal Diet"
+                                android:inputType="none"
+                                android:paddingHorizontal="16dp"
+                                android:paddingTop="22dp"
+                                android:paddingBottom="16dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- Beard / Hijab -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/beardHijabInputLay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:boxBackgroundMode="outline"
+                            app:boxCornerRadiusTopStart="10dp"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxStrokeColor="@color/til_stroke_color"
+                            app:hintTextColor="@color/til_hint_color">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/beardHijabEdt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:cursorVisible="false"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/satoshi_regular"
+                                android:hint="Beard / Hijab"
+                                android:inputType="none"
+                                android:paddingHorizontal="16dp"
+                                android:paddingTop="22dp"
+                                android:paddingBottom="16dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- Religious Level -->
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/religiousLevelInputLay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:boxBackgroundMode="outline"
+                            app:boxCornerRadiusTopStart="10dp"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxStrokeColor="@color/til_stroke_color"
+                            app:hintTextColor="@color/til_hint_color">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/religiousLevelEdt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:cursorVisible="false"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/satoshi_regular"
+                                android:hint="Religious Involvement"
+                                android:inputType="none"
+                                android:paddingHorizontal="16dp"
+                                android:paddingTop="22dp"
+                                android:paddingBottom="16dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
 
                 </LinearLayout>
+
             </com.nikahtech.muslimnikah.widgets.MCardView>
 
 
 
+
             <com.nikahtech.muslimnikah.widgets.MCardView
+                android:id="@+id/section_family"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardElevation="8dp"
@@ -786,13 +1204,13 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="16dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="16dp"
                         android:fontFamily="@font/semibold"
                         android:lineSpacingExtra="5dp"
                         android:text="About Family"
@@ -801,50 +1219,133 @@
                         android:textSize="17sp"
                         tools:ignore="HardcodedText" />
 
-                    <com.nikahtech.muslimnikah.widgets.MEditText
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/familyTypeInputLay"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
                         android:layout_marginTop="10dp"
-                        android:drawableTint="@color/colorTextHint"
-                        android:layout_marginEnd="16dp"
-                        android:background="@color/white"
-                        android:drawableStart="@drawable/icon_email"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/regular"
-                        android:hint="Family Type"
-                        android:padding="12dp"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/colorTextPrimary"
-                        android:textSize="16sp"
-                        app:cornerRadius="10dp"
-                        app:strokeColor="@color/colorTextHint"
-                        app:strokeHighlightColor="@color/colorPrimaryDark"
-                        app:strokeWidth="1dp"
-                        tools:ignore="HardcodedText" />
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxStrokeColor="@color/til_stroke_color"
+                        app:hintTextColor="@color/til_hint_color">
 
-                    <com.nikahtech.muslimnikah.widgets.MEditText
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/familyTypeEdt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:cursorVisible="false"
+                            android:focusableInTouchMode="true"
+                            android:fontFamily="@font/satoshi_regular"
+                            android:hint="Family Type"
+                            android:inputType="none"
+                            android:paddingHorizontal="16dp"
+                            android:paddingTop="22dp"
+                            android:paddingBottom="16dp"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/familyStatusInputLay"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginBottom="16dp"
-                        android:drawableTint="@color/colorTextHint"
-                        android:layout_marginEnd="16dp"
-                        android:background="@color/white"
-                        android:drawableStart="@drawable/icon_email"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/regular"
-                        android:hint="Family Status"
-                        android:padding="12dp"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/colorTextPrimary"
-                        android:textSize="16sp"
-                        app:cornerRadius="10dp"
-                        app:strokeColor="@color/colorTextHint"
-                        app:strokeHighlightColor="@color/colorPrimaryDark"
-                        app:strokeWidth="1dp"
-                        tools:ignore="HardcodedText" />
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxStrokeColor="@color/til_stroke_color"
+                        app:hintTextColor="@color/til_hint_color">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/familyStatusEdt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:cursorVisible="false"
+                            android:focusableInTouchMode="true"
+                            android:fontFamily="@font/satoshi_regular"
+                            android:hint="Family Status"
+                            android:inputType="none"
+                            android:paddingHorizontal="16dp"
+                            android:paddingTop="22dp"
+                            android:paddingBottom="16dp"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/fatherOccupationInputLay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxStrokeColor="@color/til_stroke_color"
+                        app:hintTextColor="@color/til_hint_color">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/fatherOccupationEdt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:cursorVisible="false"
+                            android:focusableInTouchMode="true"
+                            android:fontFamily="@font/satoshi_regular"
+                            android:hint="Father Occupation"
+                            android:inputType="none"
+                            android:paddingHorizontal="16dp"
+                            android:paddingTop="22dp"
+                            android:paddingBottom="16dp"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/siblingsCountInputLay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="18dp"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:helperTextEnabled="false"
+                        app:boxStrokeColor="@color/til_stroke_color"
+                        app:hintTextColor="@color/til_hint_color">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/siblingsCountEdt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:cursorVisible="false"
+                            android:focusableInTouchMode="true"
+                            android:fontFamily="@font/satoshi_regular"
+                            android:hint="Siblings Count"
+                            android:inputType="none"
+                            android:paddingHorizontal="16dp"
+                            android:paddingTop="22dp"
+                            android:paddingBottom="16dp"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
             </com.nikahtech.muslimnikah.widgets.MCardView>
@@ -853,24 +1354,22 @@
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <com.nikahtech.muslimnikah.widgets.MButton
-        android:id="@+id/MButton"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/updateProfileBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:fontFamily="@font/medium"
+        android:backgroundTint="#F21F40"
+        android:fontFamily="@font/satoshi_medium"
+        android:paddingVertical="12dp"
         android:text="Update Profile"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="15sp"
-        app:backgroundColor="@color/colorPrimary"
-        app:topRightRadius="10dp"
-        app:topLeftRadius="10dp"
-        app:bottomLeftRadius="10dp"
-        app:bottomRightRadius="10dp"
-        android:paddingVertical="14dp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.nikahtech.muslimnikah.activities.ViewProfileActivity;
-import com.nikahtech.muslimnikah.databinding.ItemHorizontalProfileBinding;
 import com.nikahtech.muslimnikah.databinding.ItemVerticalProfileBinding;
 
 public class VerticalProfilesVH extends RecyclerView.ViewHolder {
